@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:food/common/widgets/success_screen.dart';
+import 'package:food/common/widgets/success_screen/success_screen.dart';
 import 'package:food/features/authentication/screens/login/login.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';

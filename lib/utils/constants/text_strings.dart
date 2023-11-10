@@ -63,9 +63,9 @@ class TTexts {
       "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 
   // -- Product
-  static const String popularProducts = "Popular Products";
+  static const String popularProducts = "Popular Items..";
 
   // -- Home
-  static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Taimoor Sikander";
+  static const String homeAppbarTitle = "Good day for Ordering";
+  static const String homeAppbarSubTitle = "Venu Charan Reddy";
 }
