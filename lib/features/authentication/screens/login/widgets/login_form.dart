@@ -45,13 +45,13 @@ class TLoginForm extends StatelessWidget {
         ),
       
         ///Forgot Password
-        TextButton(onPressed: () => Get.to(ForgotPassword()), child:const Text(TTexts.forgetPassword)),
+        TextButton(onPressed: () => Get.to(const ForgotPassword()), child:const Text(TTexts.forgetPassword)),
         ],
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
       
                  ///SignIn Button
-                  SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), child: Text(TTexts.signIn))),
+                  SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), child: const Text(TTexts.signIn))),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
       ///create Account

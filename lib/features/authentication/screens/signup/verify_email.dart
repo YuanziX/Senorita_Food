@@ -36,7 +36,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               Text(TTexts.confirmEmail,
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  style: Theme.of(context).textTheme.headlineSmall,
                   textAlign: TextAlign.center),
               const SizedBox(height: TSizes.spaceBtwItems),
               Text('support@vitAPfoodz.com',
@@ -44,7 +44,7 @@ class VerifyEmailScreen extends StatelessWidget {
                   textAlign: TextAlign.center),
               const SizedBox(height: TSizes.spaceBtwItems),
               Text(TTexts.confirmEmailSubTitle,
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  style: Theme.of(context).textTheme.headlineSmall,
                   textAlign: TextAlign.center),
               const SizedBox(height: TSizes.spaceBtwSections),
               SizedBox(
