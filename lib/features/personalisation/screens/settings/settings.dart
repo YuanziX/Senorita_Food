@@ -4,6 +4,7 @@ import 'package:food/common/widgets/custom_shapes/container/primary_header_conta
 import 'package:food/common/widgets/layouts/listTiltes/setting_menu_tile.dart';
 import 'package:food/common/widgets/layouts/listTiltes/user_profile.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
+import 'package:food/features/personalisation/screens/address/address.dart';
 import 'package:food/features/personalisation/screens/profile/widgets/profile.dart';
 import 'package:food/utils/constants/colors.dart';
 import 'package:food/utils/constants/sizes.dart';
@@ -49,7 +50,7 @@ class SettingScreen extends StatelessWidget {
                   icon: Iconsax.safe_home,
                   title: 'My Address',
                   subtitle: 'Set Shopping delivery Address',
-                  onTap: () {},
+                  onTap: () => Get.to(() => const UserAddressScreen()),
                 ),
                 const SizedBox(height: TSizes.spaceBtwItems),
                 TSettingsMenuTile(

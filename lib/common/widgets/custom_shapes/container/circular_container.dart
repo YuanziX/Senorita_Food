@@ -11,6 +11,7 @@ class TCircularContainer extends StatelessWidget {
     this.padding = 0,
     this.margin,
     this.backgroundColor = TColors.white,
+    EdgeInsets? labelPadding,
   });
 
   final double? width;
