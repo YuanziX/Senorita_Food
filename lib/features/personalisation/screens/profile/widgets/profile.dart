@@ -5,6 +5,7 @@ import 'package:food/common/widgets/texts/section_heading.dart';
 import 'package:food/features/personalisation/screens/profile/widgets/profile_menu.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -68,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: TSizes.spaceBtwItems),
             Center(
               child: TextButton(
-                onPressed: () {},
+                onPressed: () => Get.back(),
                 child: const Text('Close Account',
                     style: TextStyle(color: Colors.red)),
               ),

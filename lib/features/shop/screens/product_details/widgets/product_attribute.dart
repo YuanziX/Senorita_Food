@@ -39,7 +39,7 @@ class TProductAttributes extends StatelessWidget {
                               title: 'Price:   ', smallSize: true),
                           //Actual Price
                           Text(
-                            '\₹25',
+                            '₹25',
                             style: Theme.of(context)
                                 .textTheme
                                 .titleSmall!

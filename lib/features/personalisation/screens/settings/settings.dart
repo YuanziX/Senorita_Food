@@ -6,6 +6,8 @@ import 'package:food/common/widgets/layouts/listTiltes/user_profile.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
 import 'package:food/features/personalisation/screens/address/address.dart';
 import 'package:food/features/personalisation/screens/profile/widgets/profile.dart';
+import 'package:food/features/shop/screens/cart/cart.dart';
+import 'package:food/features/shop/screens/orders/order.dart';
 import 'package:food/utils/constants/colors.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:get/get.dart';
@@ -57,13 +59,13 @@ class SettingScreen extends StatelessWidget {
                   icon: Iconsax.shopping_cart,
                   title: 'My Cart',
                   subtitle: 'Add, remove products and move to checkout',
-                  onTap: () {},
+                  onTap: () => Get.to(()=> const CartScreen()),
                 ),
                 TSettingsMenuTile(
                   icon: Iconsax.bag_tick,
                   title: 'My Orders',
                   subtitle: 'In-progress and completed orders',
-                  onTap: () {},
+                  onTap: () => Get.to(() => const OrderScreen()),
                 ),
                 TSettingsMenuTile(
                   icon: Iconsax.bank,

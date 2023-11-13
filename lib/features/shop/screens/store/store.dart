@@ -3,13 +3,15 @@ import 'package:food/common/widgets/appbar/appbar.dart';
 import 'package:food/common/widgets/appbar/tabbar.dart';
 import 'package:food/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:food/common/widgets/layouts/gird_layout.dart';
-import 'package:food/common/widgets/products/cart_menu_icon.dart';
+import 'package:food/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:food/common/widgets/brands/brand_card.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
+import 'package:food/features/shop/screens/brand/all_brands.dart';
 import 'package:food/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:food/utils/constants/colors.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -47,7 +49,7 @@ class StoreScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwSections),
     
                     ///Featured Brands
-                    TSectionHeading(title: 'Featured Brands',showActionButton: true,onPressed: (){}),
+                    TSectionHeading(title: 'Featured Brands',showActionButton: true,onPressed: () => Get.to(() => const AllBrandsScreen())),
                     const SizedBox(height: TSizes.spaceBtwItems/1.5),
     
                     TGirdLayout(
@@ -55,7 +57,7 @@ class StoreScreen extends StatelessWidget {
                       mainAxisExtent: 80, 
                       itemBuilder: (_, index){
     
-                      return const TBrandCard(showBorder: false);
+                      return const TBrandCard(showBorder: true);
                     },
                     ),
                   ],

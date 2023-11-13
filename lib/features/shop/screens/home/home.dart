@@ -3,11 +3,13 @@ import 'package:food/common/widgets/custom_shapes/container/primary_header_conta
 import 'package:food/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:food/common/widgets/products/prodect_cards/product_card_vertical.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
+import 'package:food/features/shop/screens/all_products/all_products.dart';
 import 'package:food/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:food/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:food/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/layouts/gird_layout.dart';
 
@@ -68,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                     //Heading
                     TSectionHeading(
                       title: 'Popular Products',
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => const AllProducts()),
                     ),
                     const SizedBox(height: TSizes.spaceBtwItems),
 
