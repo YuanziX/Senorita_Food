@@ -17,7 +17,7 @@ class TSortableProducts extends StatelessWidget {
         DropdownButtonFormField(
           decoration:const InputDecoration(prefixIcon: Icon(Iconsax.sort)) ,
           onChanged: (value){},
-          items:['Higher Price','Lower Price','Popularity','Newest','Sale'].
+          items:['Name','Higher Price','Lower Price','Popularity','Newest','Sale'].
           map((option) => DropdownMenuItem(value: option,child: Text(option))).toList(), 
           ),
           const SizedBox(height: TSizes.spaceBtwSections),

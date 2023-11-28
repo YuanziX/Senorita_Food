@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/widgets/appbar/appbar.dart';
+import 'package:food/common/widgets/bottom_sheet/bottom_sheet.dart';
 import 'package:food/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:food/common/widgets/layouts/listTiltes/setting_menu_tile.dart';
 import 'package:food/common/widgets/layouts/listTiltes/user_profile.dart';
@@ -9,6 +10,7 @@ import 'package:food/features/personalisation/screens/profile/widgets/profile.da
 import 'package:food/features/shop/screens/cart/cart.dart';
 import 'package:food/features/shop/screens/orders/order.dart';
 import 'package:food/utils/constants/colors.dart';
+import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -48,18 +50,18 @@ class SettingScreen extends StatelessWidget {
                   title: 'Account Settings',
                   showActionButton: false,
                 ),
+                const SizedBox(height: TSizes.spaceBtwItems),
                 TSettingsMenuTile(
                   icon: Iconsax.safe_home,
                   title: 'My Address',
                   subtitle: 'Set Shopping delivery Address',
                   onTap: () => Get.to(() => const UserAddressScreen()),
                 ),
-                const SizedBox(height: TSizes.spaceBtwItems),
                 TSettingsMenuTile(
                   icon: Iconsax.shopping_cart,
                   title: 'My Cart',
                   subtitle: 'Add, remove products and move to checkout',
-                  onTap: () => Get.to(()=> const CartScreen()),
+                  onTap: () => Get.to(() => const CartScreen()),
                 ),
                 TSettingsMenuTile(
                   icon: Iconsax.bag_tick,
@@ -91,6 +93,52 @@ class SettingScreen extends StatelessWidget {
                   subtitle: 'Manage data usage and connected accounts',
                   onTap: () {},
                 ),
+                // About Dev
+                const SizedBox(height: TSizes.spaceBtwSections),
+                const TSectionHeading(
+                    title: 'Developers', showActionButton: false),
+                const SizedBox(height: TSizes.spaceBtwItems),
+                TSettingsMenuTile(
+                  icon: Iconsax.discount_shape,
+                  title: 'Naga Charan',
+                  subtitle: 'Flutter Front End',
+                  onTap: () {
+                    CustomBottomSheet.show(context, 'Developer', [
+                      Developer(
+                        name: 'Naga Charan',
+                        photoAsset: TImages.userProfileImage2,
+                        role: 'Flutter Front End',
+                        instagramHandle: 'Instagram',
+                        linkedinHandle: 'linkedin',
+                        instagramUrl:
+                            'https://www.instagram.com/charantangella/',
+                        linkedinUrl:
+                            'https://www.linkedin.com/in/naga-charan-tangella-0482b5234/',
+                      ),
+                    ]);
+                  },
+                ),
+                TSettingsMenuTile(
+                  icon: Iconsax.discount_shape,
+                  title: 'Venu Charan',
+                  subtitle: 'Flutter Front End',
+                  onTap: () {
+                    CustomBottomSheet.show(context, 'Venu Charan', [
+                      Developer(
+                        name: 'Venu Charan',
+                        photoAsset: TImages.userProfileImage3,
+                        role: 'Flutter Front End',
+                        instagramHandle: 'insta',
+                        linkedinHandle: 'linkedin',
+                        instagramUrl:
+                            'https://www.instagram.com/charantangella/',
+                        linkedinUrl:
+                            'https://www.linkedin.com/in/naga-charan-tangella-0482b5234/',
+                      ),
+                    ]);
+                  },
+                ),
+                // App Settings
                 const SizedBox(height: TSizes.spaceBtwSections),
                 const TSectionHeading(
                     title: 'App Settings', showActionButton: false),
@@ -118,6 +166,7 @@ class SettingScreen extends StatelessWidget {
                   subtitle: 'Set image quality to be seen',
                   trailing: Switch(value: false, onChanged: (value) {}),
                 ),
+
                 // Logout
                 const SizedBox(height: TSizes.spaceBtwSections),
                 SizedBox(

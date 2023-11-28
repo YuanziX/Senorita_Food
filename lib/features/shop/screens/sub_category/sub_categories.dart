@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/widgets/appbar/appbar.dart';
-import 'package:food/common/widgets/images/t_rounded_images.dart';
+//import 'package:food/common/widgets/images/t_rounded_images.dart';
 import 'package:food/common/widgets/products/prodect_cards/product_card_horizontal.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
+import 'package:food/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 
@@ -12,6 +13,11 @@ class SubCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> banners = [
+      TImages.banner1,
+      TImages.banner2,
+      TImages.banner3,
+    ];
     return Scaffold(
       appBar: const TAppBar(title: Text('Sports'), showBackArrow: true),
       body: SingleChildScrollView(
@@ -20,10 +26,11 @@ class SubCategoriesScreen extends StatelessWidget {
           child: Column(
             children: [
               // Banner
-              const TRoundedImage(
+              PromoSlider(banners: banners),
+              /*const TRoundedImage(
                   width: double.infinity,
                   imageUrl: TImages.banner8,
-                  applyImageRadius: true),
+                  applyImageRadius: true),*/
               const SizedBox(height: TSizes.spaceBtwSections),
 
               //Sub-Categories

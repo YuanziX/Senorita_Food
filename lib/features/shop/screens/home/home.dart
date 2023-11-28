@@ -58,15 +58,6 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: Column(
                   children: [
-                    const PromoSlider(banners: [
-                      TImages.banner1,
-                      TImages.banner2,
-                      TImages.banner3
-                    ]),
-                    const SizedBox(
-                      height: TSizes.spaceBtwSections,
-                    ),
-
                     //Heading
                     TSectionHeading(
                       title: 'Popular Products',
@@ -75,8 +66,24 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwItems),
 
                     TGirdLayout(
+                        itemCount: 2,
+                        itemBuilder: (_, index) =>
+                            const TProductCardVertical()),
+                    const SizedBox(height: TSizes.spaceBtwItems),
+
+                    const PromoSlider(banners: [
+                      TImages.promoBanner3,
+                      TImages.promoBanner1,
+                      TImages.promoBanner2
+                    ]),
+                    const SizedBox(
+                      height: TSizes.spaceBtwSections,
+                    ),
+
+                    TGirdLayout(
                         itemCount: 4,
-                        itemBuilder: (_, index) => const TProductCardVertical())
+                        itemBuilder: (_, index) =>
+                            const TProductCardVertical()),
                   ],
                 ))
           ],

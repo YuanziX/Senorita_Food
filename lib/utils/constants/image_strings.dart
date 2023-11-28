@@ -3,16 +3,20 @@
 /// This class contains all the App Images in String formats.
 class TImages {
   // -- App Logos
-  static const String darkAppLogo =
-      "assets/logos/t-store-splash-logo-black.png";
+  static const String darkAppLogo = 
+    "assets/logos/vc.png";
+     
   static const String lightAppLogo =
       "assets/logos/t-store-splash-logo-white.png";
+
 
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
   static const String facebook = "assets/logos/facebook-icon.png";
 
   // -- Category Icons
+  static const String biryaniIcon = 
+       "assets/icons/categories/biryani.png";
   static const String sportIcon =
       "assets/icons/categories/icons8-bowling-64.png";
   static const String clothIcon =
@@ -67,7 +71,9 @@ class TImages {
       "assets/images/on_boarding_images/sammy-line-delivery.gif";
 
   // -- Products
-  static const String productImage1 = "assets/images/products/nike-shoes.png";
+
+  static const String productImage0 = "assets/images/products/pr.jpg";
+  static const String productImage1 = "assets/images/products/dosa.png";
   static const String productImage2 = "assets/images/products/product-1.png";
   static const String productImage3 =
       "assets/images/products/product-jacket.png";
@@ -226,9 +232,9 @@ class TImages {
       "assets/images/reviews/review_profile_image_3.jpeg";
 
   //Banners
-  static const String promoBanner1 = "assets/images/banners/promo-banner-1.png";
-  static const String promoBanner2 = "assets/images/banners/promo-banner-2.png";
-  static const String promoBanner3 = "assets/images/banners/promo-banner-3.png";
+  static const String promoBanner1 = "assets/images/banners/promo-banner-1.jpeg";
+  static const String promoBanner2 = "assets/images/banners/promo-banner-2.jpeg";
+  static const String promoBanner3 = "assets/images/banners/promo-banner-3.jpeg";
   static const String banner1 = "assets/images/banners/banner_1.jpg";
   static const String banner2 = "assets/images/banners/banner_2.jpg";
   static const String banner3 = "assets/images/banners/banner_3.jpg";

@@ -12,8 +12,8 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
-class ProductDeatail extends StatelessWidget {
-  const ProductDeatail({super.key});
+class ProductDetail extends StatelessWidget {
+  const ProductDetail({super.key});
 
   @override
   Widget build(BuildContext context) {

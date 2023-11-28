@@ -21,7 +21,7 @@ class TProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDeatail()),
+      onTap: () => Get.to(() => const ProductDetail()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -40,7 +40,8 @@ class TProductCardVertical extends StatelessWidget {
                 children: [
                   ///Thumbnail Image
                   const TRoundedImage(
-                      imageUrl: TImages.productImage1, applyImageRadius: true),
+                    height: 180,
+                      imageUrl: TImages.productImage1, applyImageRadius: true), 
 
                   ///Sale Tag
                   Positioned(
@@ -80,7 +81,7 @@ class TProductCardVertical extends StatelessWidget {
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
-                  SizedBox(height: TSizes.spaceBtwSections / 2),
+                  SizedBox(height: TSizes.spaceBtwItems / 2),
                   TBrandTitleWithVerifiedIcon(
                     title: 'Nike',
                   ),

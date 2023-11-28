@@ -36,7 +36,7 @@ class StoreScreen extends StatelessWidget {
               pinned: true,
               floating: true,
               backgroundColor: THelperFunctions.isDarkMode(context)? TColors.black:TColors.white,
-              expandedHeight: 440,
+              expandedHeight: 350,
               flexibleSpace: Padding(
                 padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: ListView(
@@ -53,7 +53,7 @@ class StoreScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwItems/1.5),
     
                     TGirdLayout(
-                      itemCount: 4,
+                      itemCount: 2,
                       mainAxisExtent: 80, 
                       itemBuilder: (_, index){
     
@@ -70,7 +70,7 @@ class StoreScreen extends StatelessWidget {
                 Tab(child: Text('Biryani Spot')),
                 Tab(child: Text('FastFood')),
                 Tab(child: Text('Bakery')),
-                Tab(child: Text('Sports')),
+                Tab(child: Text('Shakes')),
                 ],
               ),
               ),
