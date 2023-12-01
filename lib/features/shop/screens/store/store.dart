@@ -22,75 +22,81 @@ class StoreScreen extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: TAppBar(
-          title: Text('Store',style: Theme.of(context).textTheme.headlineMedium),
+          title:
+              Text('Store', style: Theme.of(context).textTheme.headlineMedium),
           actions: [
             TCartCounterIcon(onPressed: () {}),
           ],
         ),
-    
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxScrolled) {
-          return [
-            SliverAppBar(
-              automaticallyImplyLeading: false,
-              pinned: true,
-              floating: true,
-              backgroundColor: THelperFunctions.isDarkMode(context)? TColors.black:TColors.white,
-              expandedHeight: 350,
-              flexibleSpace: Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    ///Search
-                    const SizedBox(height: TSizes.spaceBtwItems),
-                    const TSearchContainer(text: 'Search in Store',showBorder: true,showBackground: false,padding: EdgeInsets.zero),
-                    const SizedBox(height: TSizes.spaceBtwSections),
-    
-                    ///Featured Brands
-                    TSectionHeading(title: 'Featured Brands',showActionButton: true,onPressed: () => Get.to(() => const AllBrandsScreen())),
-                    const SizedBox(height: TSizes.spaceBtwItems/1.5),
-    
-                    TGirdLayout(
-                      itemCount: 2,
-                      mainAxisExtent: 80, 
-                      itemBuilder: (_, index){
-    
-                      return const TBrandCard(showBorder: true);
-                    },
-                    ),
+            return [
+              SliverAppBar(
+                automaticallyImplyLeading: false,
+                pinned: true,
+                floating: true,
+                backgroundColor: THelperFunctions.isDarkMode(context)
+                    ? TColors.black
+                    : TColors.white,
+                expandedHeight: 350,
+                flexibleSpace: Padding(
+                  padding: const EdgeInsets.all(TSizes.defaultSpace),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      ///Search
+                      const SizedBox(height: TSizes.spaceBtwItems),
+                      const TSearchContainer(
+                          text: 'Search in Store',
+                          showBorder: true,
+                          showBackground: false,
+                          padding: EdgeInsets.zero),
+                      const SizedBox(height: TSizes.spaceBtwSections),
+
+                      ///Featured Brands
+                      TSectionHeading(
+                          title: 'Featured Shops',
+                          showActionButton: true,
+                          onPressed: () =>
+                              Get.to(() => const AllBrandsScreen())),
+                      const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+
+                      TGirdLayout(
+                        itemCount: 2,
+                        mainAxisExtent: 80,
+                        itemBuilder: (_, index) {
+                          return const TBrandCard(showBorder: true);
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+
+                ///tabs
+                bottom: const TTabBar(
+                  tabs: [
+                    Tab(child: Text('Maggie')),
+                    Tab(child: Text('Biryani Spot')),
+                    Tab(child: Text('FastFood')),
+                    Tab(child: Text('Bakery')),
+                    Tab(child: Text('Shakes')),
                   ],
                 ),
               ),
-              ///tabs
-              bottom: const TTabBar(
-                tabs:[
-                Tab(child: Text('Maggie')),
-                Tab(child: Text('Biryani Spot')),
-                Tab(child: Text('FastFood')),
-                Tab(child: Text('Bakery')),
-                Tab(child: Text('Shakes')),
-                ],
-              ),
-              ),
-          ];
-        }, body: const TabBarView(
-          children: [TCategoryTab(),
-            TCategoryTab(),
-            TCategoryTab(),
-            TCategoryTab(),
-            TCategoryTab(),
-         
-          
-        ],
+            ];
+          },
+          body: const TabBarView(
+            children: [
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+            ],
+          ),
         ),
-      ),
       ),
     );
   }
 }
-
-
-
-

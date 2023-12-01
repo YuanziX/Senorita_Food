@@ -1,4 +1,4 @@
-import 'package:food/features/authentication/controllers_onboarding/onboarding_controller.dart';
+import 'package:food/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:food/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 //import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:food/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:food/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
-import 'package:food/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
+//import 'package:food/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 //import 'package:iconsax/iconsax.dart';
 import 'package:food/utils/constants/image_strings.dart';
 //import 'package:food/utils/constants/sizes.dart';
@@ -52,7 +52,7 @@ class OnBoardingScreen extends StatelessWidget {
             ],
           ),
         
-         const  OnBoardingSkip(),
+         ///const  OnBoardingSkip(),
         
         const OnBoardingDotNavigation(),
 

@@ -28,7 +28,7 @@ class ProductReviewScreen extends StatelessWidget {
               /// Overall Product Ratings
               const OverAllProductRatings(),
               const TRatingBarIndicator(
-                rating: 3.5,
+                rating: 4.7,
               ),
               Text("12,611", style: Theme.of(context).textTheme.bodySmall),
               const SizedBox(height: TSizes.spaceBtwSections),

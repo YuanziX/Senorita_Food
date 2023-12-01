@@ -26,9 +26,7 @@ class FavouriteScreen extends StatelessWidget {
             onPressed: () => Get.to(const HomeScreen()),
           ),
         ],
-        
       ),
-      
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -36,9 +34,9 @@ class FavouriteScreen extends StatelessWidget {
             children: [
               const TRoundedImage(
                   width: double.infinity,
-                  imageUrl: TImages.banner8,
+                  imageUrl: TImages.promoBanner5,
                   applyImageRadius: true),
-                  const SizedBox(height: TSizes.spaceBtwItems),
+              const SizedBox(height: TSizes.spaceBtwItems),
               TGirdLayout(
                   itemCount: 4,
                   itemBuilder: (_, index) => const TProductCardVertical())

@@ -12,15 +12,15 @@ class THomeCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 130,
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 8,
+        itemCount: 15,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
           return TVerticalImageText(
-              image: TImages.biryaniIcon,
-              title: ' Biryanis',
+              image: TImages.RiceIcon,
+              title: ' Fried Rice',
               onTap: () => Get.to(() => const SubCategoriesScreen()));
         },
       ),

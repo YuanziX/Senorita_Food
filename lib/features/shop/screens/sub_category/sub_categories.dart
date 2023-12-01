@@ -7,16 +7,17 @@ import 'package:food/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 
-
 class SubCategoriesScreen extends StatelessWidget {
   const SubCategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<String> banners = [
-      TImages.banner1,
-      TImages.banner2,
-      TImages.banner3,
+      TImages.promoBanner3,
+      TImages.promoBanner2,
+      TImages.promoBanner4,
+      TImages.promoBanner5,
+      TImages.promoBanner6
     ];
     return Scaffold(
       appBar: const TAppBar(title: Text('Sports'), showBackArrow: true),
@@ -47,11 +48,10 @@ class SubCategoriesScreen extends StatelessWidget {
                     child: ListView.separated(
                         itemCount: 4,
                         scrollDirection: Axis.horizontal,
-                        separatorBuilder: (context, index) => 
+                        separatorBuilder: (context, index) =>
                             const SizedBox(width: TSizes.spaceBtwItems),
                         itemBuilder: (context, index) =>
                             const TProductCardHorizontal()),
-                            
                   )
                 ],
               )

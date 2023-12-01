@@ -68,7 +68,7 @@ class TProductAttributes extends StatelessWidget {
               ),
               const TProductTitleText(
                 title:
-                    'This is the description of the product at it can go upto 4 lines.',
+                    'This is the description of the item at it can go upto 4 lines.',
                 smallSize: true,
                 maxLines: 4,
               ),
@@ -81,7 +81,7 @@ class TProductAttributes extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TSectionHeading(
-              title: 'Colors',
+              title: 'Will setup Later, Ignore',
               showActionButton: false,
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
@@ -119,23 +119,11 @@ class TProductAttributes extends StatelessWidget {
               spacing: 8,
               children: [
                 TChoiceChip(
-                    text: 'EU 34', selected: true, onSelected: (value) {}),
+                    text: 'Large', selected: true, onSelected: (value) {}),
                 TChoiceChip(
-                    text: 'EU 36', selected: false, onSelected: (value) {}),
+                    text: 'Medium', selected: false, onSelected: (value) {}),
                 TChoiceChip(
-                    text: 'EU 38', selected: false, onSelected: (value) {}),
-                TChoiceChip(
-                    text: 'EU 40', selected: false, onSelected: (value) {}),
-                TChoiceChip(
-                    text: 'EU 42', selected: false, onSelected: (value) {}),
-                TChoiceChip(
-                    text: 'EU 44', selected: false, onSelected: (value) {}),
-                TChoiceChip(
-                    text: 'EU 46', selected: false, onSelected: (value) {}),
-                TChoiceChip(
-                    text: 'EU 48', selected: false, onSelected: (value) {}),
-                TChoiceChip(
-                    text: 'EU 69', selected: false, onSelected: (value) {}),
+                    text: 'Small', selected: false, onSelected: (value) {}),
               ],
             )
           ],

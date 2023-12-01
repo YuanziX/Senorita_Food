@@ -29,20 +29,20 @@ class TVerticalImageText extends StatelessWidget {
           children: [
             ///Circular icon
             Container(
-              width: 56,
-              height: 56,
-              padding: const EdgeInsets.all(TSizes.sm),
+              width: 100,
+              height: 100,
+              padding: const EdgeInsets.all(TSizes.iconMd),
               decoration: BoxDecoration(
                 color:
-                    backgroundColor ?? (dark ? TColors.black : TColors.white),
-                borderRadius: BorderRadius.circular(100),
+                    backgroundColor ?? (dark ? Colors.grey.shade200 : Colors.grey.shade200),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: Center(
                 child: Image(
                     image: AssetImage(image),
                     fit: BoxFit.cover,
                     color: THelperFunctions.isDarkMode(context)
-                        ? TColors.light
+                        ? TColors.dark
                         : TColors.dark),
               ),
             ),
@@ -56,7 +56,7 @@ class TVerticalImageText extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium!
-                    .apply(color: textColor),
+                    .apply(color: dark ? Colors.white : Colors.black),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

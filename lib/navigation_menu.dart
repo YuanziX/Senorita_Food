@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/features/personalisation/screens/settings/settings.dart';
+import 'package:food/features/shop/screens/explore/explore.dart';
 import 'package:food/features/shop/screens/home/home.dart';
 import 'package:food/features/shop/screens/store/store.dart';
 import 'package:food/features/shop/screens/wishlist/wishlist.dart';
@@ -30,7 +31,8 @@ class NavigationMenu extends StatelessWidget {
               : TColors.black.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+            NavigationDestination(icon: Icon(Iconsax.emoji_happy), label: 'Explore'),
+            NavigationDestination(icon: Icon(Iconsax.shop_add), label: 'Store'),
             NavigationDestination(icon: Icon(Iconsax.heart), label: 'WishList'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
@@ -46,6 +48,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
+    const ExploreScreen(),
     const StoreScreen(),
     const FavouriteScreen(),
     const SettingScreen(),

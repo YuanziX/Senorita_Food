@@ -51,7 +51,7 @@ class TProductMetaData extends StatelessWidget {
 
         // Title
 
-        const TProductTitleText(title: 'Green Nike Sports Shirt'),
+        const TProductTitleText(title: 'Junk Food Pizza'),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
         //Stock Status
@@ -74,7 +74,7 @@ class TProductMetaData extends StatelessWidget {
               overlayColor: darkmode ? TColors.white : TColors.dark,
             ),
             const TBrandTitleWithVerifiedIcon(
-                title: 'Nike', brandTextSize: TextSizes.medium),
+                title: 'Bits & Bites', brandTextSize: TextSizes.medium),
           ],
         ),
       ],

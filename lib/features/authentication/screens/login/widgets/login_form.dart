@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food/features/authentication/screens/password_configuration/forgot_password.dart';
 import 'package:food/features/authentication/screens/signup/signup.dart';
+//import 'package:food/features/authentication/screens/signup/signup.dart';
 import 'package:food/navigation_menu.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/constants/text_strings.dart';
@@ -48,17 +49,20 @@ class TLoginForm extends StatelessWidget {
         TextButton(onPressed: () => Get.to(const ForgotPassword()), child:const Text(TTexts.forgetPassword)),
         ],
                   ),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  const SizedBox(height: TSizes.spaceBtwItems/2),
       
                  ///SignIn Button
                   SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), child: const Text(TTexts.signIn))),
-                  const SizedBox(height: TSizes.spaceBtwItems),
+                  const SizedBox(height: TSizes.spaceBtwItems/2),
 
-      ///create Account
+      /*create Account
                   SizedBox(
                     width:double.infinity,
                     child: OutlinedButton(onPressed: () => Get.to(()=> const SignupScreen()) , 
-                    child: const Text(TTexts.createAccount))),
+                    child: const Text(TTexts.createAccount))),*/
+
+                    
+                    TextButton(onPressed: () => Get.to(const SignupScreen()), child: const Text(TTexts.signup),clipBehavior: Clip.hardEdge),
         ],
                   
                   ),

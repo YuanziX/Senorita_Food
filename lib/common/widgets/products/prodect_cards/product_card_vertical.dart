@@ -40,8 +40,9 @@ class TProductCardVertical extends StatelessWidget {
                 children: [
                   ///Thumbnail Image
                   const TRoundedImage(
-                    height: 180,
-                      imageUrl: TImages.productImage1, applyImageRadius: true), 
+                      height: 180,
+                      imageUrl: TImages.productImage1,
+                      applyImageRadius: true),
 
                   ///Sale Tag
                   Positioned(
@@ -78,12 +79,12 @@ class TProductCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TProductTitleText(
-                    title: 'Green Nike Air Shoes',
+                    title: 'Delicious Pizza Hehe',
                     smallSize: true,
                   ),
                   SizedBox(height: TSizes.spaceBtwItems / 2),
                   TBrandTitleWithVerifiedIcon(
-                    title: 'Nike',
+                    title: 'Pizza',
                   ),
                 ],
               ),

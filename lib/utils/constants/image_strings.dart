@@ -3,20 +3,18 @@
 /// This class contains all the App Images in String formats.
 class TImages {
   // -- App Logos
-  static const String darkAppLogo = 
-    "assets/logos/vc.png";
-     
+  static const String darkAppLogo = "assets/logos/vc.png";
+
   static const String lightAppLogo =
       "assets/logos/t-store-splash-logo-white.png";
-
 
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
   static const String facebook = "assets/logos/facebook-icon.png";
 
   // -- Category Icons
-  static const String biryaniIcon = 
-       "assets/icons/categories/biryani.png";
+  static const String biryaniIcon = "assets/icons/categories/biryani.png";
+  static const String RiceIcon = "assets/icons/categories/fried-rice.png";
   static const String sportIcon =
       "assets/icons/categories/icons8-bowling-64.png";
   static const String clothIcon =
@@ -49,6 +47,8 @@ class TImages {
   static const String acerlogo = "assets/icons/brands/acer_logo.png";
 
   // -- Animations
+  static const String daceranimation =
+      "assets/images/animations/processing.json";
   static const String productsIllustration =
       "assets/images/animations/sammy-line-workout.gif";
   static const String productsSaleIllustration =
@@ -73,10 +73,10 @@ class TImages {
   // -- Products
 
   static const String productImage0 = "assets/images/products/pr.jpg";
-  static const String productImage1 = "assets/images/products/dosa.png";
+  static const String productImage1 =
+      "assets/images/products/chicken pizza.png";
   static const String productImage2 = "assets/images/products/product-1.png";
-  static const String productImage3 =
-      "assets/images/products/product-jacket.png";
+  static const String productImage3 = "assets/images/products/poori 1.png";
   static const String productImage4 =
       "assets/images/products/product-jeans.png";
   static const String productImage5 =
@@ -97,8 +97,7 @@ class TImages {
       "assets/images/products/samsung_s9_mobile_withback.png";
   static const String productImage13 =
       "assets/images/products/samsung_s9_mobile_back.png";
-  static const String productImage14 =
-      "assets/images/products/iphone8_mobile.png";
+  static const String productImage14 = "assets/images/products/idly 1.png";
   static const String productImage15 =
       "assets/images/products/iphone8_mobile_back.png";
   static const String productImage16 =
@@ -232,9 +231,14 @@ class TImages {
       "assets/images/reviews/review_profile_image_3.jpeg";
 
   //Banners
-  static const String promoBanner1 = "assets/images/banners/promo-banner-1.jpeg";
-  static const String promoBanner2 = "assets/images/banners/promo-banner-2.jpeg";
-  static const String promoBanner3 = "assets/images/banners/promo-banner-3.jpeg";
+  static const String promoBanner1 =
+      "assets/images/banners/promo-banner-1.jpeg";
+  static const String promoBanner2 = "assets/images/banners/promo-banner-2.png";
+  static const String promoBanner3 =
+      "assets/images/banners/promo-banner-3.jpeg";
+  static const String promoBanner4 = "assets/images/banners/promo-banner-4.jpg";
+  static const String promoBanner5 = "assets/images/banners/promo-banner-5.jpg";
+  static const String promoBanner6 = "assets/images/banners/promo-banner-6.jpg";
   static const String banner1 = "assets/images/banners/banner_1.jpg";
   static const String banner2 = "assets/images/banners/banner_2.jpg";
   static const String banner3 = "assets/images/banners/banner_3.jpg";

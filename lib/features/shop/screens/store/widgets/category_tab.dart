@@ -13,27 +13,40 @@ class TCategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView(
+    return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-      Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
-            child: Column(children: [
+        Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            children: [
               ///Brands
-              const TBrandShowCase(images: [TImages.productImage20,TImages.productImage2,TImages.productImage1]),
-              const TBrandShowCase(images: [TImages.productImage3,TImages.productImage2,TImages.productImage1]),
+              const TBrandShowCase(images: [
+                TImages.productImage14,
+                TImages.productImage3,
+                TImages.productImage1
+              ]),
+              const TBrandShowCase(images: [
+                TImages.productImage14,
+                TImages.productImage3,
+                TImages.productImage1
+              ]),
               const SizedBox(height: TSizes.spaceBtwItems),
 
-    
               ///Products
-              TSectionHeading(title: 'You might like',onPressed: () => Get.to(()=> const AllProducts())),
+              TSectionHeading(
+                  title: 'You might like',
+                  onPressed: () => Get.to(() => const AllProducts())),
               const SizedBox(height: TSizes.spaceBtwItems),
-    
-              TGirdLayout(itemCount:4, itemBuilder: (_,index) => const TProductCardVertical()),
+
+              TGirdLayout(
+                  itemCount: 4,
+                  itemBuilder: (_, index) => const TProductCardVertical()),
               const SizedBox(height: TSizes.spaceBtwSections),
             ],
-            ),
-            ),
+          ),
+        ),
       ],
     );
   }

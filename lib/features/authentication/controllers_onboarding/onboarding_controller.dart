@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:food/features/authentication/screens/login/login.dart';
+//import 'package:food/features/authentication/screens/login/login.dart';
+// import 'package:food/features/authentication/screens/new_login/loginpage.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -31,9 +33,9 @@ class OnBoardingController extends GetxController {
   }
 
   ///Update Current Index and Jump to the last Page
-  void skipPage() {
-    Get.offAll(const LoginScreen());
+  /*void skipPage() {
+    Get.offAll(const LoginPage());
     //currentPageIndex.value = 2;
     //pageController.jumpTo(2);
-  }
+  }*/
 }

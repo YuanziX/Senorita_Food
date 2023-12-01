@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:food/utils/constants/colors.dart';
+import 'package:food/utils/constants/sizes.dart';
+import 'package:food/utils/helpers/helper_functions.dart';
+import 'package:iconsax/iconsax.dart';
 
 class CardDetail extends StatelessWidget {
-  const CardDetail({Key? key});
+  const CardDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.all(0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: TColors.white,
+          color: dark ? TColors.darkerGrey : TColors.white,
           boxShadow: const [
             BoxShadow(
               blurRadius: 1,
@@ -27,7 +31,7 @@ class CardDetail extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(0),
                 child: Image.network(
                   'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                   width: double.infinity,
@@ -54,18 +58,55 @@ class CardDetail extends StatelessWidget {
                         children: [
                           Text(
                             'Vitsoe 1982',
-                            style: Theme.of(context).textTheme.titleLarge,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.apply(
+                                    color: dark ? Colors.black : Colors.black),
                           ),
                           Text(
                             '\$126.20',
-                            style: Theme.of(context).textTheme.titleLarge,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.apply(
+                                    color: dark ? Colors.black : Colors.black),
                           ),
                         ],
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Description here about the product possibly have an amazing thing here okay.',
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        'The product possibly have an amazing thing here.',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.apply(color: dark ? Colors.black : Colors.black),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(left: TSizes.sm),
+                          ),
+
+                          ///Add to cart button
+                          Container(
+                            decoration: const BoxDecoration(
+                              color: TColors.dark,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(TSizes.cardRadiusMd),
+                                bottomRight:
+                                    Radius.circular(TSizes.productImageRadius),
+                              ),
+                            ),
+                            child: const SizedBox(
+                                width: TSizes.iconLg * 1.2,
+                                height: TSizes.iconLg * 1.2,
+                                child: Center(
+                                    child: Icon(Iconsax.add,
+                                        color: TColors.white))),
+                          ),
+                        ],
                       ),
                     ],
                   ),

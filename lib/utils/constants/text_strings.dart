@@ -21,6 +21,7 @@ class TTexts {
       "Food at your fingertips—anywhere, anytime, on campus.";
 
   // -- Authentication Forms
+   static const String signup = "Create New Account";
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
   static const String email = "E-Mail";

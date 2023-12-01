@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/utils/helpers/helper_functions.dart';
 
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({
@@ -17,11 +18,12 @@ class TSectionHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title,
-        style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor),
+        style: Theme.of(context).textTheme.headlineSmall!.apply(color: dark ? Colors.white : Colors.black),
         maxLines: 1,
         overflow: TextOverflow.ellipsis),
         if(showActionButton) TextButton(onPressed: onPressed, child: Text(buttonTitle))

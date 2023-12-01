@@ -52,9 +52,9 @@ class TBrandCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const TBrandTitleWithVerifiedIcon(
-                      title: 'Nike', brandTextSize: TextSizes.large),
+                      title: 'Plaza', brandTextSize: TextSizes.large),
                   Text(
-                    '25 products',
+                    '25 items',
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   )

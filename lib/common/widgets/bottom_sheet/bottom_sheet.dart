@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/utils/constants/image_strings.dart';
+//import 'package:iconsax/iconsax.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Developer {
@@ -122,10 +123,10 @@ class CustomBottomSheet {
   }
 
   static Future<void> _launchUrl(String url) async {
-    try {
-      await launch(url);
-    } catch (e) {
-      await launch(url, forceSafariVC: false);
-    }
+  try {
+    await launch(url);
+  } catch (e) {
+    await launch(url, forceSafariVC: false);
   }
+}
 }

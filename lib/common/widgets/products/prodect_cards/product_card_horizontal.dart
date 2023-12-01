@@ -77,13 +77,13 @@ class TProductCardHorizontal extends StatelessWidget {
                     children: [
                       //Title
                       TProductTitleText(
-                        title: 'Green Nike half Sleeves Shirt',
+                        title: 'Hot Hot Burger Patty',
                         smallSize: true,
                       ),
                       SizedBox(
                         height: TSizes.spaceBtwItems / 2,
                       ),
-                      TBrandTitleWithVerifiedIcon(title: 'Nike'),
+                      TBrandTitleWithVerifiedIcon(title: 'Burger'),
                     ],
                   ),
                   const Spacer(),

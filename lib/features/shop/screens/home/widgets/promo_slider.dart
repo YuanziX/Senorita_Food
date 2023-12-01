@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:food/features/shop/controllers/home_controller.dart';
-import 'package:food/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
 import '../../../../../common/widgets/custom_shapes/container/circular_container.dart';
@@ -25,10 +24,15 @@ class PromoSlider extends StatelessWidget {
             options: CarouselOptions(
                 viewportFraction: 1,
                 autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 5),
+                autoPlayInterval: const Duration(seconds: 4),
                 onPageChanged: (index, _) =>
                     controller.updatePageIndicator(index)),
-            items: banners.map((url) => TRoundedImage(imageUrl: url)).toList()),
+            items: banners
+                .map((url) => TRoundedImage(
+                      imageUrl: url,
+                      padding: const EdgeInsets.all(5),
+                    ))
+                .toList()),
         const SizedBox(height: TSizes.spaceBtwItems),
         Center(
           child: Obx(
@@ -41,8 +45,8 @@ class PromoSlider extends StatelessWidget {
                     height: 4,
                     margin: const EdgeInsets.only(right: 10),
                     backgroundColor: controller.carousalCurrentIndex.value == i
-                        ? TColors.primary
-                        : TColors.grey,
+                        ? Colors.black
+                        : Colors.grey,
                   ),
               ],
             ),
