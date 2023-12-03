@@ -25,15 +25,13 @@ class TUserProfileTile extends StatelessWidget {
         'Naga Charan',
         style: Theme.of(context)
             .textTheme
-            .headlineSmall!
+            .headlineMedium!
             .apply(color: TColors.white),
       ),
       subtitle: Text(
         'nagacharan.21bce7829.gmail.com',
-        style: Theme.of(context)
-            .textTheme
-            .headlineMedium!
-            .apply(color: TColors.white),
+        style:
+            Theme.of(context).textTheme.labelSmall!.apply(color: TColors.white),
       ),
       trailing: IconButton(
           onPressed: onPressed,

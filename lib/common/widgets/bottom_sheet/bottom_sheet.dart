@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/utils/constants/colors.dart';
 import 'package:food/utils/constants/image_strings.dart';
 //import 'package:iconsax/iconsax.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -82,7 +83,7 @@ class CustomBottomSheet {
         ),
         const SizedBox(height: 8),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _buildButton('Instagram', developer.instagramUrl, TImages.paypal),
             _buildButton('LinkedIn', developer.linkedinUrl, TImages.paytm),
@@ -108,13 +109,13 @@ class CustomBottomSheet {
           children: [
             Image.asset(
               iconAsset,
-              height: 24,
-              width: 24,
+              height: 28,
+              width: 35,
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 14),
             Text(
               label,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(color: TColors.white),
             ),
           ],
         ),
@@ -123,10 +124,10 @@ class CustomBottomSheet {
   }
 
   static Future<void> _launchUrl(String url) async {
-  try {
-    await launch(url);
-  } catch (e) {
-    await launch(url, forceSafariVC: false);
+    try {
+      await launch(url);
+    } catch (e) {
+      await launch(url, forceSafariVC: false);
+    }
   }
-}
 }
