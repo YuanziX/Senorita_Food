@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:food/common/widgets/loaders/loaders.dart';
 import 'package:food/common/widgets/success_screen.dart';
 import 'package:food/data/repositories.authentication/authentication_repo.dart';

@@ -9,8 +9,6 @@ class TLoginHeader extends StatelessWidget {
     super.key,
   });
 
-
-
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
@@ -18,12 +16,26 @@ class TLoginHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image(
-          height: 150,
-          image: AssetImage(dark ? TImages.lightAppLogo: TImages.darkAppLogo)
+            height: 190,
+            image:
+                AssetImage(dark ? TImages.lightAppLogo : TImages.darkAppLogo)),
+        Padding(
+          padding: const EdgeInsets.only(left: 25),
+          child: Text(
+            TTexts.loginTitle,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
-        Text(TTexts.loginTitle,style: Theme.of(context).textTheme.headlineMedium),
-        const SizedBox(height: TSizes.sm,),
-        Text(TTexts.loginSubTitle,style: Theme.of(context).textTheme.bodyMedium,)
+        ),
+        const SizedBox(
+          height: TSizes.sm,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 25, bottom: 20),
+          child: Text(
+            TTexts.loginSubTitle,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        )
       ],
     );
   }

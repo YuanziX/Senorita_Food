@@ -12,13 +12,13 @@ class SubCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> banners = [
-      TImages.promoBanner3,
-      TImages.promoBanner2,
-      TImages.promoBanner4,
-      TImages.promoBanner5,
-      TImages.promoBanner6
-    ];
+    // final List<String> banners = [
+    //   TImages.promoBanner3,
+    //   TImages.promoBanner2,
+    //   TImages.promoBanner4,
+    //   TImages.promoBanner5,
+    //   TImages.promoBanner6
+    // ];
     return Scaffold(
       appBar: const TAppBar(title: Text('Sports'), showBackArrow: true),
       body: SingleChildScrollView(
@@ -27,7 +27,13 @@ class SubCategoriesScreen extends StatelessWidget {
           child: Column(
             children: [
               // Banner
-              PromoSlider(banners: banners),
+              const PromoSlider(banners: [
+                TImages.promoBanner3,
+                TImages.promoBanner2,
+                TImages.promoBanner4,
+                TImages.promoBanner5,
+                TImages.promoBanner6
+              ]),
               /*const TRoundedImage(
                   width: double.infinity,
                   imageUrl: TImages.banner8,
