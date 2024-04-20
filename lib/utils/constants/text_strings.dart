@@ -21,7 +21,7 @@ class TTexts {
       "Food at your fingertips—anywhere, anytime, on campus.";
 
   // -- Authentication Forms
-  static const String signup = "Create New ccount";
+   static const String signup = "Create New Account";
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
   static const String email = "E-Mail";
@@ -45,7 +45,7 @@ class TTexts {
   // -- Authentication Headings
   static const String loginTitle = "Welcome back,";
   static const String loginSubTitle =
-      "Discover Limitless Choices and Unmatched Convisssssss";
+      "Discover Limitless Choices and Unmatched Convenience.";
   static const String signupTitle = "Let’s create your account";
   static const String forgetPasswordTitle = "Forget password";
   static const String forgetPasswordSubTitle =

@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/styles/TRoundedContainer.dart';
 import 'package:food/common/widgets/icons/t_circular_icon.dart';
+import 'package:food/features/shop/models/product_model.dart';
 import 'package:food/features/shop/screens/product_details/product_detail.dart';
 import 'package:food/utils/constants/colors.dart';
+import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 class CardDetail extends StatelessWidget {
-  const CardDetail({Key? key});
+  const CardDetail({Key? key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const ProductDetail(),
-          ),
-        );
-      },
+      onTap: () => Get.to(()=> ProductDetail(product: product)),
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => ProductDetail(product: product),
+        //   ),
+        // );
+      
       child: Stack(
         children: [
           Padding(
@@ -46,8 +52,8 @@ class CardDetail extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(0),
-                      child: Image.network(
-                        'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                      child: Image.asset(
+                        TImages.promoBanner2,
                         width: double.infinity,
                         height: 200,
                         fit: BoxFit.cover,
@@ -71,7 +77,7 @@ class CardDetail extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Vitsoe 1982',
+                                  'Burgirr',
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleLarge
@@ -81,7 +87,7 @@ class CardDetail extends StatelessWidget {
                                               : Colors.black),
                                 ),
                                 Text(
-                                  '\$126.20',
+                                  '\$6.20',
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleLarge
@@ -94,7 +100,7 @@ class CardDetail extends StatelessWidget {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              'The product possibly has an amazing thing here.',
+                              'This is the burgir that he ate in the boat stoopid',
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium

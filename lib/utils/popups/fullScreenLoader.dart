@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food/common/widgets/loaders/animation_loading.dart';
+import 'package:food/common/widgets/loaders/animation_loader.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 

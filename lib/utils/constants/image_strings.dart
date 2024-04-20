@@ -3,8 +3,7 @@
 /// This class contains all the App Images in String formats.
 class TImages {
   // -- App Logos
-  static const String darkAppLogo =
-      "assets/logos/t-store-splash-logo-black.png";
+  static const String darkAppLogo = "assets/logos/t-store-splash-logo-black.png";
 
   static const String lightAppLogo =
       "assets/logos/t-store-splash-logo-white.png";
@@ -77,7 +76,7 @@ class TImages {
   static const String productImage1 =
       "assets/images/products/chicken pizza.png";
   static const String productImage2 = "assets/images/products/product-1.png";
-  static const String productImage3 = "assets/images/products/poori 1.png";
+  static const String productImage3 = "assets/images/products/nike-shoes.png";
   static const String productImage4 =
       "assets/images/products/product-jeans.png";
   static const String productImage5 =

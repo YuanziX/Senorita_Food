@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
+import 'package:food/features/shop/models/product_model.dart';
 import 'package:food/features/shop/screens/product_details/widgets/bottom_add_to_cart.dart';
 import 'package:food/features/shop/screens/product_details/widgets/product_attribute.dart';
 import 'package:food/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
@@ -7,13 +8,16 @@ import 'package:food/features/shop/screens/product_details/widgets/product_meta_
 import 'package:food/features/shop/screens/product_details/widgets/rating_share_widget.dart';
 import 'package:food/features/shop/screens/product_reviews/product_review.dart';
 import 'package:food/utils/constants/sizes.dart';
+import 'package:food/utils/enums/enums.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
+  const ProductDetail({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class ProductDetail extends StatelessWidget {
           children: [
             /// Product Image Slider
 
-            const TProductImageSlider(),
+            TProductImageSlider(product: product),
 
             /// Product Details
 
@@ -40,10 +44,12 @@ class ProductDetail extends StatelessWidget {
                   // - Ratings & share buttton
                   const TRatingandShare(),
                   // Price Title Stock and Brand
-                  const TProductMetaData(),
+                  TProductMetaData(product: product),
                   // Product Attributes
-                  const TProductAttributes(),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  if (product.productType == ProductType.variable.toString())
+                    TProductAttributes(product: product),
+                  if (product.productType == ProductType.variable.toString())
+                    const SizedBox(height: TSizes.spaceBtwSections),
                   //Checkout Button
                   SizedBox(
                     width: double.infinity,
@@ -55,15 +61,15 @@ class ProductDetail extends StatelessWidget {
                   const TSectionHeading(
                       title: 'Description', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  const ReadMoreText(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
+                  ReadMoreText(
+                    product.description ?? '',
                     trimLines: 2,
                     trimCollapsedText: 'show more',
                     trimExpandedText: 'show less',
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    moreStyle: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w800),
+                    lessStyle: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w800),
                   ),
 
                   //Reviews

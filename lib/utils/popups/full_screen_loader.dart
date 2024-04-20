@@ -22,18 +22,18 @@ class TFullScreenLoader {
         onWillPop: () async => false,
         child: Container(
           color: THelperFunctions.isDarkMode(Get.context!)
-              ? TColors.primary
+              ? TColors.dark
               : TColors.white,
           width: double.infinity,
           height: double.infinity,
-          
+        child: SingleChildScrollView(
   child: Column(
   children: [
-    const SizedBox(height: 250),
+    const SizedBox(height: 200),
     TAnimationLoaderWidget(text: text, animation: animation),
   ],
 ),
-),
+),),
       ),
  // Column
          // Container

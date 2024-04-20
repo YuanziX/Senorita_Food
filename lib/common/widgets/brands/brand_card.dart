@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/styles/TRoundedContainer.dart';
 import 'package:food/common/widgets/images/t_circular_image.dart';
+import 'package:food/features/shop/models/brand_model.dart';
 import 'package:food/utils/constants/colors.dart';
-import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 
@@ -14,9 +14,11 @@ class TBrandCard extends StatelessWidget {
     super.key,
     required this.showBorder,
     this.onTap,
+    required this.brand,
   });
 
   final bool showBorder;
+  final BrandModel brand;
   final void Function()? onTap;
 
   @override
@@ -35,8 +37,8 @@ class TBrandCard extends StatelessWidget {
             ///icon
             Flexible(
               child: TCircularImage(
-                isNetworkImage: false,
-                image: TImages.clothIcon,
+                isNetworkImage: true,
+                image: brand.image,
                 backgroundColor: Colors.transparent,
                 overlayColor: THelperFunctions.isDarkMode(context)
                     ? TColors.white
@@ -51,10 +53,10 @@ class TBrandCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TBrandTitleWithVerifiedIcon(
-                      title: 'Plaza', brandTextSize: TextSizes.large),
+                  TBrandTitleWithVerifiedIcon(
+                      title: brand.name, brandTextSize: TextSizes.large),
                   Text(
-                    '25 items',
+                    '${brand.productsCount ?? 0} products',
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   )

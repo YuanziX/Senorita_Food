@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food/data/repositories.authentication/authentication_repo.dart';
+import 'package:food/data/repositories/authentication_repo.dart';
 import 'package:food/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';

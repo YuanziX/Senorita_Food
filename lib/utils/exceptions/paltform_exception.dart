@@ -28,6 +28,10 @@ class TPlatformException implements Exception {
         return 'Internal error. Please try again later.';
       case 'invalid-verification-code':
         return 'Invalid verification code. Please enter a valid code.';
+      case 'invalid-verification-id':
+        return 'Invalid verification ID. Please request a new verification code.';
+      case 'quota-exceeded':
+        return 'Quota exceeded. Please try again later.';
       // Add more cases as needed...
       default:
         return 'An unexpected Firebase error occurred. Please try again.';

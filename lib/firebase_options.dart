@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -47,31 +44,42 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBID0-Ot5AR7iB84cYdm1dq80ByqqlynkE',
-    appId: '1:593070598197:web:5f2f0f749ad399f3ff297c',
-    messagingSenderId: '593070598197',
-    projectId: 'vitfoodz',
-    authDomain: 'vitfoodz.firebaseapp.com',
-    storageBucket: 'vitfoodz.appspot.com',
-    measurementId: 'G-675QSB3HL6',
+    apiKey: 'AIzaSyCO-Ge_JFdTpuClX0LkuENqoOiKtOjOwUY',
+    appId: '1:462207427253:web:7f350c7651a7d8a57b94fc',
+    messagingSenderId: '462207427253',
+    projectId: 'project-vc10',
+    authDomain: 'project-vc10.firebaseapp.com',
+    storageBucket: 'project-vc10.appspot.com',
+    measurementId: 'G-97RX3K3WQX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBP1_izGZ_eTvPlICBFL8Fk_TfqhLWQySM',
-    appId: '1:593070598197:android:f281b35c01fde04fff297c',
-    messagingSenderId: '593070598197',
-    projectId: 'vitfoodz',
-    storageBucket: 'vitfoodz.appspot.com',
+    apiKey: 'AIzaSyCXlM3MTCVqda3dWdKyIOvBPHcow_gChVg',
+    appId: '1:462207427253:android:dda4f5941b5c08297b94fc',
+    messagingSenderId: '462207427253',
+    projectId: 'project-vc10',
+    storageBucket: 'project-vc10.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCgkeD6K8SS4YT3ze5xHqNNl0cx0h-5_MU',
-    appId: '1:593070598197:ios:5028aaf52ad0b719ff297c',
-    messagingSenderId: '593070598197',
-    projectId: 'vitfoodz',
-    storageBucket: 'vitfoodz.appspot.com',
-    androidClientId: '593070598197-iroh27bqgj4cht77hev2a6g7mktm2h1j.apps.googleusercontent.com',
-    iosClientId: '593070598197-lo5aesrt8rfiqghll7baainermrp77ip.apps.googleusercontent.com',
+    apiKey: 'AIzaSyC8yUhev6gKrqGXQzM1t2-tQjQtYwp8ljI',
+    appId: '1:462207427253:ios:3b943fb057c14fd67b94fc',
+    messagingSenderId: '462207427253',
+    projectId: 'project-vc10',
+    storageBucket: 'project-vc10.appspot.com',
+    iosClientId:
+        '462207427253-f3r1s1u00a0co8ie2an31lt1d51vq0ve.apps.googleusercontent.com',
     iosBundleId: 'com.example.food',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyC8yUhev6gKrqGXQzM1t2-tQjQtYwp8ljI',
+    appId: '1:462207427253:ios:4529623a352443fd7b94fc',
+    messagingSenderId: '462207427253',
+    projectId: 'project-vc10',
+    storageBucket: 'project-vc10.appspot.com',
+    iosClientId:
+        '462207427253-ckjgotdsnsvnvonfaiferag0uf6bl1e8.apps.googleusercontent.com',
+    iosBundleId: 'com.example.food.RunnerTests',
   );
 }

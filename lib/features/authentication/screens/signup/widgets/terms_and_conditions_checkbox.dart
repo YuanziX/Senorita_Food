@@ -22,8 +22,8 @@ class TTermsAndConditionsCheckBox extends StatelessWidget {
           height: 24,
           child: Obx(
             () => Checkbox(
-                value: controller.privacyPolicy.value,
-                onChanged: (value) => !controller.privacyPolicy.value),
+                value: !controller.privacyPolicy.value,
+                onChanged: (value) => controller.privacyPolicy.value = !controller.privacyPolicy.value),
           ),
         ),
         const SizedBox(width: TSizes.spaceBtwInputFields / 2),

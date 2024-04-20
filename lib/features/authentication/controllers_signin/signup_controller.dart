@@ -1,11 +1,11 @@
 import 'package:food/common/widgets/loaders/loaders.dart';
-import 'package:food/data/repositories.authentication/authentication_repo.dart';
-import 'package:food/data/repositories.authentication/user/user_repo.dart';
-import 'package:food/data/repositories.authentication/user/usermodel.dart';
+import 'package:food/data/repositories/authentication_repo.dart';
+import 'package:food/data/repositories/user/user_repo.dart';
+import 'package:food/data/repositories/user/usermodel.dart';
 import 'package:food/features/authentication/controllers_signin/networkmanager.dart';
 import 'package:food/features/authentication/screens/signup/verify_email.dart';
 import 'package:food/utils/constants/image_strings.dart';
-import 'package:food/utils/popups/fullScreenLoader.dart';
+import 'package:food/utils/popups/full_screen_loader.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
@@ -28,21 +28,22 @@ class SignupController extends GetxController {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
-          'We are processing your information...', TImages.promoBanner2);
+          'We are processing your information...', TImages.daceranimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) return;
 
       // Form Validation
-      if (signupFormKey.currentState!.validate()) return;
+      if (!signupFormKey.currentState!.validate()) return;
 
       // Privacy Policy Check
       if (!privacyPolicy.value) {
         TLoaders.warningSnackBar(
-            title: 'Accept Privacy Policy',
-            message:
-                'In order to create an account you must have read and accept the Privacy Policy & Terms of Use.');
+          title: 'Accept Privacy Policy',
+          message:
+              'In order to create an account you must have read and accept the Privacy Policy & Terms of Use.',
+        );
         return;
       }
 

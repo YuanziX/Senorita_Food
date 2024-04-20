@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food/features/authentication/screens/login/login.dart';
-import 'package:food/features/authentication/screens/onboarding/onboarding.dart';
-import 'package:get/get.dart';
+//import 'package:food/features/authentication/screens/login/login.dart';
+//import 'package:food/features/authentication/screens/onboarding/onboarding.dart';
+//import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:video_player/video_player.dart';
 
@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     _controller = VideoPlayerController.asset(
-      'assets/nike-animation.mp4',
+      'assets/nike_animation.mp4',
     )
       ..initialize().then((_) {
         setState(() {});
@@ -38,14 +38,14 @@ class _SplashScreenState extends State<SplashScreen> {
     _controller.play();
 
     // add delay till video is complete
-    await Future.delayed(const Duration(seconds: 4));
+    await Future.delayed(const Duration(seconds: 3));
 
     // Check if it's the first time
     deviceStorage.writeIfNull('isFirstTime', true);
-    bool isFirstTime = deviceStorage.read('isFirstTime') ?? true;
+    //bool isFirstTime = deviceStorage.read('isFirstTime') ?? true;
 
     // Navigating to the appropriate screen
-    Get.off(() => isFirstTime ? const OnBoardingScreen() : const LoginScreen());
+    //Get.off(() => isFirstTime ? const OnBoardingScreen() : const LoginScreen());
   }
 
   @override

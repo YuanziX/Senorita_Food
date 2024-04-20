@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/widgets/images/t_circular_image.dart';
+import 'package:food/features/personalisation/controllers/user_controller.dart';
 import 'package:food/utils/constants/colors.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:iconsax/iconsax.dart';
@@ -14,6 +15,7 @@ class TUserProfileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return ListTile(
       leading: const TCircularImage(
         image: TImages.user,
@@ -22,16 +24,16 @@ class TUserProfileTile extends StatelessWidget {
         padding: 0,
       ),
       title: Text(
-        'Naga Charan',
+        controller.user.value.fullName,
         style: Theme.of(context)
             .textTheme
             .headlineMedium!
             .apply(color: TColors.white),
       ),
       subtitle: Text(
-        'nagacharan.21bce7829.gmail.com',
+        controller.user.value.email,
         style:
-            Theme.of(context).textTheme.labelSmall!.apply(color: TColors.white),
+            Theme.of(context).textTheme.bodySmall!.apply(color: TColors.white),
       ),
       trailing: IconButton(
           onPressed: onPressed,
