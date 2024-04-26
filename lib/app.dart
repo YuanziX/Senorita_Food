@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food/blindings/general_bindings.dart';
+import 'package:food/bindings/general_bindings.dart';
 import 'package:food/routes/app_routes.dart';
 import 'package:food/utils/constants/colors.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';

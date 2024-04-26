@@ -93,13 +93,10 @@ flutter:
 #--------------- LOCAL ASSETS ------------------#
   assets:
     - assets/logos/ 
-    - assets/icons/brands/
     - assets/images/content/
     - assets/images/banners/
     - assets/images/reviews/
-    - assets/images/products/
-    - assets/images/products/pr.jpg
-    - assets/images/products/dosa.png
+    - assets/images/products/chicken pizza.png
     - assets/icons/categories/
     - assets/images/animations/
     - assets/images/animations/processing.json

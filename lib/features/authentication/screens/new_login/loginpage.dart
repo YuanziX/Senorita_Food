@@ -21,36 +21,24 @@ class LoginPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             child: Padding(
-            padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                 const TLoginHeader(),
-                  
+                  const TLoginHeader(),
+
                   ///Form
                   const TLoginForm(),
 
                   TFormDivider(dividerText: TTexts.orSignInWith.capitalize!),
-            const SizedBox(height: TSizes.spaceBtwSections),
+                  const SizedBox(height: TSizes.spaceBtwSections),
 
-            const TSocialButtons()
-
-
-                  
+                  const TSocialButtons()
                 ],
               ),
             ),
-          
-        ),),
+          ),
+        ),
       ],
     );
   }
 }
-
-
-
-
-
-
-
-
-

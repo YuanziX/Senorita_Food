@@ -22,16 +22,13 @@ class LoginScreen extends StatelessWidget {
           children: [
             ///Logo,Title and SubTitle
             const TPrimaryLoginHeaderContainer(
-                child: 
-                Column(children: [TLoginHeader()])
-                ),
+                child: Column(children: [TLoginHeader()])),
 
             ///Form
 
             const Padding(
               padding: EdgeInsets.all(20),
-              child: 
-              TLoginForm(),
+              child: TLoginForm(),
             ),
 
             ///Divider
