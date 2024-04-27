@@ -30,7 +30,7 @@ class TBillingAmountSection extends StatelessWidget {
           children: [
             Text('Shipping Fee', style: Theme.of(context).textTheme.bodyMedium),
             Text(
-                '\₹${TPricingCalculator.calculateShippingCost(subTotal, 'IND')}',
+                '₹${TPricingCalculator.calculateShippingCost(subTotal, 'IND')}',
                 style: Theme.of(context).textTheme.labelLarge)
           ],
         ),
@@ -42,7 +42,7 @@ class TBillingAmountSection extends StatelessWidget {
           children: [
             Text('Tax Fee', style: Theme.of(context).textTheme.bodyMedium),
             Text(
-                '\₹${TPricingCalculator.calculateTax(subTotal, 'IND')}',
+                '₹${TPricingCalculator.calculateTax(subTotal, 'IND')}',
                 style: Theme.of(context).textTheme.labelLarge)
           ],
         ),
@@ -54,7 +54,7 @@ class TBillingAmountSection extends StatelessWidget {
           children: [
             Text('Order Total', style: Theme.of(context).textTheme.bodyMedium),
             Text(
-                '\₹${TPricingCalculator.calculateTotalPrice(subTotal, 'IND')}',
+                '₹${TPricingCalculator.calculateTotalPrice(subTotal, 'IND')}',
                 style: Theme.of(context).textTheme.titleMedium)
           ],
         ),

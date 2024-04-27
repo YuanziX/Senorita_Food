@@ -8,7 +8,6 @@ import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 class TBillingPaymentSection extends StatelessWidget {
   const TBillingPaymentSection({super.key});

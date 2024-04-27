@@ -16,12 +16,12 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        BackgroundImage(),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
                  const TLoginHeader(),

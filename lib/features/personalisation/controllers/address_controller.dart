@@ -109,7 +109,7 @@ class AddressController extends GetxController {
 
       //Update
       address.id = id;
-      await selectedAddress(address);
+      selectedAddress(address);
 
       //Remove
       TFullScreenLoader.stopLoading();

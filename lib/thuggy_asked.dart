@@ -5,6 +5,8 @@ import 'package:food/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 
 class ProductCardButton extends StatelessWidget {
+  const ProductCardButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/widgets/appbar/appbar.dart';
 import 'package:food/common/widgets/icons/t_circular_icon.dart';
-import 'package:food/common/widgets/images/t_rounded_images.dart';
 import 'package:food/common/widgets/layouts/gird_layout.dart';
 import 'package:food/common/widgets/loaders/animation_loader.dart';
 import 'package:food/common/widgets/products/prodect_cards/product_card_vertical.dart';

@@ -8,11 +8,10 @@ import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 class CardDetail extends StatelessWidget {
-  const CardDetail({Key? key, required this.product});
+  const CardDetail({super.key, required this.product});
 
   final ProductModel product;
 
@@ -20,14 +19,14 @@ class CardDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(()=> ProductDetail(product: product)),
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => ProductDetail(product: product),
-        //   ),
-        // );
-      
+      onTap: () => Get.to(() => ProductDetail(product: product)),
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => ProductDetail(product: product),
+      //   ),
+      // );
+
       child: Stack(
         children: [
           Padding(

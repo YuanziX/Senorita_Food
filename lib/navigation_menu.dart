@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food/features/personalisation/screens/settings/settings.dart';
-import 'package:food/features/shop/screens/explore/explore.dart';
 import 'package:food/features/shop/screens/home/home.dart';
 import 'package:food/features/shop/screens/store/store.dart';
 import 'package:food/features/shop/screens/wishlist/wishlist.dart';

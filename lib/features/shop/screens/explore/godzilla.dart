@@ -9,7 +9,7 @@ class storeview extends StatefulWidget {
 }
 
 class _storeviewState extends State<storeview> {
-  final CarouselController _carouselController = new CarouselController();
+  final CarouselController _carouselController = CarouselController();
   int _current = 0;
 
   final List<dynamic> _movies = [

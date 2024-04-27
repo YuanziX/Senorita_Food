@@ -83,7 +83,7 @@ class CheckOutScreen extends StatelessWidget {
                   title: 'Empty Cart',
                   message: 'Add items in the cart in order to proceed.'),
           child: Text(
-              'Checkout \₹${TPricingCalculator.calculateTotalPrice(subtotal, 'IND')}'),
+              'Checkout ₹${TPricingCalculator.calculateTotalPrice(subtotal, 'IND')}'),
         ),
       ),
     );

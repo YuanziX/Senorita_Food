@@ -13,7 +13,6 @@ import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/enums/enums.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TProductCardHorizontal extends StatelessWidget {
