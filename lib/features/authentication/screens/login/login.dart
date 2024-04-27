@@ -10,6 +10,7 @@ import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/constants/text_strings.dart';
 //import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 

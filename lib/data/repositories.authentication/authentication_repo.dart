@@ -43,10 +43,10 @@ class AuthenticationRepository extends GetxController {
   /// Function to Show Splash Screen
   void showSplashScreen() async {
     // Show splash screen
-    Get.off(() => SplashScreen());
+    Get.off(() => const SplashScreen());
 
     // Add a delay if needed
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 4));
 
     // Redirect to the appropriate screen
     screenRedirect();

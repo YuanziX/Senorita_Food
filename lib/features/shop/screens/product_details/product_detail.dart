@@ -24,7 +24,7 @@ class ProductDetail extends StatelessWidget {
     // ignore: unused_local_variable
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      bottomNavigationBar: const TBottomAddToCart(),
+      bottomNavigationBar: TBottomAddToCart(product: product),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -33,7 +33,6 @@ class ProductDetail extends StatelessWidget {
             TProductImageSlider(product: product),
 
             /// Product Details
-
             Padding(
               padding: const EdgeInsets.only(
                   right: TSizes.defaultSpace,

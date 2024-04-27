@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/widgets/images/t_rounded_images.dart';
+import 'package:food/common/widgets/products/cart/add_to_cart_button.dart';
 import 'package:food/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:food/common/widgets/texts/product_title_text.dart';
 import 'package:food/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
@@ -10,7 +11,7 @@ import 'package:food/utils/constants/colors.dart';
 import 'package:food/utils/enums/enums.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
+//import 'package:iconsax/iconsax.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../styles/TRoundedContainer.dart';
 import '../../../styles/shadows.dart';
@@ -26,7 +27,7 @@ class TProductCardVertical extends StatelessWidget {
 // }
 
 // class _TProductCardVerticalState extends State<TProductCardVertical> {
-//   bool isPressed = false;
+   final bool isPressed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +55,7 @@ class TProductCardVertical extends StatelessWidget {
       // },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 140),
-        //transform: Matrix4.identity()..scale(isPressed ? 0.95 : 1.0),
+        transform: Matrix4.identity()..scale(isPressed ? 0.95 : 1.0),
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
@@ -163,20 +164,20 @@ class TProductCardVertical extends StatelessWidget {
                 ),
 
                 ///Add to cart button
-                Container(
-                  decoration: const BoxDecoration(
-                    color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.productImageRadius),
-                    ),
-                  ),
-                  child: const SizedBox(
-                      width: TSizes.iconLg * 1.2,
-                      height: TSizes.iconLg * 1.2,
-                      child: Center(
-                          child: Icon(Iconsax.add, color: TColors.white))),
-                ),
+                // Container(
+                //   decoration: const BoxDecoration(
+                //     color: TColors.dark,
+                //     borderRadius: BorderRadius.only(
+                //       topLeft: Radius.circular(TSizes.cardRadiusMd),
+                //       bottomRight: Radius.circular(TSizes.productImageRadius),
+                //     ),
+                //   ),
+                //   child: const SizedBox(
+                //       width: TSizes.iconLg * 1.2,
+                //       height: TSizes.iconLg * 1.2,
+                //       child: Center(
+                //           child: Icon(Iconsax.add, color: TColors.white))),
+                ProductCardAddToCartButton(product: product),
               ],
             ),
           ],

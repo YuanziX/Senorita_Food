@@ -28,7 +28,7 @@ class SignupController extends GetxController {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
-          'We are processing your information...', TImages.daceranimation);
+          'Making your way Foodie World...', TImages.mailanimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
