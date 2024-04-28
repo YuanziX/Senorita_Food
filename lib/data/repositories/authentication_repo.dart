@@ -11,7 +11,6 @@ import 'package:food/features/authentication/screens/onboarding/onboarding.dart'
 //import 'package:food/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:food/features/authentication/screens/signup/verify_email.dart';
 import 'package:food/navigation_menu.dart';
-import 'package:food/splash.dart';
 import 'package:food/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:food/utils/exceptions/firebase_exception.dart';
 import 'package:food/utils/exceptions/format_exception.dart';
@@ -36,19 +35,6 @@ class AuthenticationRepository extends GetxController {
   @override
   void onReady() {
     FlutterNativeSplash.remove();
-    //screenRedirect();
-    showSplashScreen();
-  }
-
-  /// Function to Show Splash Screen
-  void showSplashScreen() async {
-    // Show splash screen
-    Get.off(() => const SplashScreen());
-
-    // Add a delay if needed
-    await Future.delayed(const Duration(seconds: 4));
-
-    // Redirect to the appropriate screen
     screenRedirect();
   }
 
