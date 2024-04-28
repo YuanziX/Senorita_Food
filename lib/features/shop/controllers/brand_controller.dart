@@ -9,24 +9,24 @@ class BrandController extends GetxController {
   static BrandController get instance => Get.find();
 
   RxBool isLoading = true.obs;
-  final RxList<BrandModel> featuredBrands = <BrandModel>[].obs;
   final RxList<BrandModel> allBrands = <BrandModel>[].obs;
+  final RxList<BrandModel> brandsToShow = <BrandModel>[].obs;
   final brandRepository = Get.put(BrandRepository());
 
   @override
   void onInit() {
-    getFeaturedBrands();
+    getAllBrands();
     super.onInit();
   }
 
   // Load Brands
-  Future<void> getFeaturedBrands() async {
+  Future<void> getAllBrands() async {
     try {
       isLoading.value = true;
       final brands = await brandRepository.getAllBrands();
       allBrands.assignAll(brands);
-      featuredBrands.assignAll(
-          allBrands.where((brand) => brand.isFeatured ?? false).take(4));
+      brandsToShow.assignAll(brands);
+      isLoading.value = false;
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
@@ -35,27 +35,15 @@ class BrandController extends GetxController {
     }
   }
 
-  // Get Brands For Category
-  Future<List<BrandModel>> getBrandsforCategory(String categoryId) async {
-    try {
-      final brands = await brandRepository.getBrandsForCategory(categoryId);
-      return brands;
-    } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-      return [];
-    }
-  }
-
-  // Get Brand Specific Products from your data source
-  Future<List<ProductModel>> getBrandsProducts(
-      {required String brandId, int limit = -1}) async {
-    try {
-      final products = await ProductRepository.instance
-          .getProductsForBrand(brandId: brandId, limit: limit);
-      return products;
-    } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
-      return [];
+  // Filter Brands
+  Future<void> filterBrands(String brandName) async {
+    if (brandName.isEmpty) {
+      brandsToShow.assignAll(allBrands);
+    } else {
+      final filteredBrands = allBrands
+          .where((brand) => brand.name.toLowerCase().contains(brandName))
+          .toList();
+      brandsToShow.assignAll(filteredBrands);
     }
   }
 }
