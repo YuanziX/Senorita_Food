@@ -67,7 +67,7 @@ class UpdateNameController extends GetxController {
           title: 'Congratulations', message: 'Your Name has been updated');
 
       //Move to previous screen
-      Get.off(() => const ProfileScreen());
+      Get.back(closeOverlays: true);
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
