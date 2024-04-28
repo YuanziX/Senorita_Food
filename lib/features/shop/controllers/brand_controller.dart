@@ -1,14 +1,13 @@
 import 'package:food/common/widgets/loaders/loaders.dart';
-import 'package:food/data/products/product_repository.dart';
 import 'package:food/data/repositories/brands/brand_repository.dart';
 import 'package:food/features/shop/models/brand_model.dart';
-import 'package:food/features/shop/models/product_model.dart';
 import 'package:get/get.dart';
 
 class BrandController extends GetxController {
   static BrandController get instance => Get.find();
 
   RxBool isLoading = true.obs;
+  late BrandModel currentBrand;
   final RxList<BrandModel> allBrands = <BrandModel>[].obs;
   final RxList<BrandModel> brandsToShow = <BrandModel>[].obs;
   final brandRepository = Get.put(BrandRepository());
@@ -38,12 +37,18 @@ class BrandController extends GetxController {
   // Filter Brands
   Future<void> filterBrands(String brandName) async {
     if (brandName.isEmpty) {
+      isLoading.value = true;
       brandsToShow.assignAll(allBrands);
+      isLoading.value = false;
     } else {
       final filteredBrands = allBrands
           .where((brand) => brand.name.toLowerCase().contains(brandName))
           .toList();
       brandsToShow.assignAll(filteredBrands);
     }
+  }
+
+  void setCurrentBrand(BrandModel brand) {
+    currentBrand = brand;
   }
 }
