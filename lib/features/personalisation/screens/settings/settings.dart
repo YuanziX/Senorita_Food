@@ -6,6 +6,7 @@ import 'package:food/common/widgets/layouts/listTiltes/user_profile.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
 import 'package:food/features/personalisation/screens/address/address.dart';
 import 'package:food/features/personalisation/screens/profile/widgets/profile.dart';
+import 'package:food/features/personalisation/screens/settings/utils/logout.dart';
 import 'package:food/features/shop/screens/cart/cart.dart';
 import 'package:food/features/shop/screens/orders/order.dart';
 import 'package:food/utils/constants/colors.dart';
@@ -94,12 +95,12 @@ class SettingScreen extends StatelessWidget {
                   ),
                   // Logout
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  SizedBox(
+                  const SizedBox(
                     height: 55,
                     width: 130,
                     child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('Logout'),
+                      onPressed: logout,
+                      child: Text('Logout'),
                     ),
                   ),
                 ],
