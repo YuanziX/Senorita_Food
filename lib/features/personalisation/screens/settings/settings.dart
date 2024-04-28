@@ -9,6 +9,7 @@ import 'package:food/features/personalisation/screens/profile/widgets/profile.da
 import 'package:food/features/personalisation/screens/settings/utils/logout.dart';
 import 'package:food/features/shop/screens/cart/cart.dart';
 import 'package:food/features/shop/screens/orders/order.dart';
+import 'package:food/features/shop/screens/wishlist/wishlist.dart';
 import 'package:food/utils/constants/colors.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:get/get.dart';
@@ -68,6 +69,12 @@ class SettingScreen extends StatelessWidget {
                     title: 'My Orders',
                     subtitle: 'In-progress and completed orders',
                     onTap: () => Get.to(() => const OrderScreen()),
+                  ),
+                  TSettingsMenuTile(
+                    icon: Iconsax.heart,
+                    title: 'My Wishlist',
+                    subtitle: 'Home to your favourite items',
+                    onTap: () => Get.to(() => const FavouriteScreen()),
                   ),
                   TSettingsMenuTile(
                     icon: Iconsax.bank,
