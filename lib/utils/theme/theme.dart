@@ -10,7 +10,7 @@ import 'package:food/utils/theme/widget_themes/text_theme.dart';
 
 import '../constants/colors.dart';
 
-class TAppTheme{
+class TAppTheme {
   TAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
