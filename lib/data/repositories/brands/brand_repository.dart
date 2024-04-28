@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:food/features/shop/models/brand_model.dart';
 import 'package:food/features/shop/models/product_model.dart';
 import 'package:food/utils/constants/api_constants.dart';
@@ -46,7 +45,6 @@ class BrandRepository extends GetxController {
       }
       return products;
     } catch (e) {
-      print(e);
       throw 'Something went wrong. Please try again';
     }
   }
