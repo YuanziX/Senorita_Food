@@ -29,8 +29,7 @@ class BrandModel {
   }
 
   //Map Json oriented document snapshot from Firebase to usermodel
-  factory BrandModel.fromJson(Map<String, dynamic> document) {
-    final data = document;
+  factory BrandModel.fromJson(Map<String, dynamic> data) {
     if (data.isEmpty) return BrandModel.empty();
     return BrandModel(
       id: data['id'].toString(),
