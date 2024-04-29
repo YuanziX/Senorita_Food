@@ -21,26 +21,65 @@ class ProductCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  product.title,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        product.title,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        product.description ?? 'No description found.',
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Text('₹${product.price.toString()}'),
                 const Spacer(),
                 AddToCartButton(product: product)
               ],
             ),
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: ShimmerImage(
-              height: 150,
-              width: THelperFunctions.screenWidth() * 0.4,
-              imageUrl: product.thumbnail,
-            ),
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: ShimmerImage(
+                  height: 150,
+                  width: THelperFunctions.screenWidth() * 0.4,
+                  imageUrl: product.thumbnail,
+                ),
+              ),
+              Positioned(
+                bottom: 8,
+                right: 8,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.6),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    '₹${product.price.toString()}',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

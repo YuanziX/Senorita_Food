@@ -78,6 +78,7 @@ class ProductModel {
       isFeatured: data['isfeatured'],
       categoryId: data['category'],
       productType: data['productype'],
+      description: data['description'],
     );
   }
 
