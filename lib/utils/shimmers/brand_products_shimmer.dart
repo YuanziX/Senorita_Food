@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food/utils/constants/sizes.dart';
+import 'package:food/features/shop/screens/store/widgets/dotted_divider.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:food/utils/shimmers/shimmer.dart';
 
-class TStoreShimmer extends StatelessWidget {
-  const TStoreShimmer({super.key, this.itemCount = 4});
+class TBrandProductsShimmer extends StatelessWidget {
+  const TBrandProductsShimmer({super.key, this.itemCount = 4});
 
   final int itemCount;
 
@@ -16,12 +16,15 @@ class TStoreShimmer extends StatelessWidget {
           Column(
             children: [
               TShimmerEffect(
-                height: 230,
+                height: 150,
                 width: THelperFunctions.screenWidth() * 0.85,
               ),
-              const SizedBox(height: 1.25 * TSizes.spaceBtwItems),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: DottedDivider(),
+              ),
             ],
-          )
+          ),
       ],
     );
   }

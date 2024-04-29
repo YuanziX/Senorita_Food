@@ -4,6 +4,7 @@ import 'package:food/features/shop/screens/store/widgets/dotted_divider.dart';
 import 'package:food/features/shop/screens/store/widgets/product_card.dart';
 import 'package:food/features/shop/screens/store/widgets/search_bar.dart';
 import 'package:food/utils/constants/sizes.dart';
+import 'package:food/utils/shimmers/brand_products_shimmer.dart';
 import 'package:get/get.dart';
 
 class StoreProductsScreen extends StatelessWidget {
@@ -36,27 +37,23 @@ class StoreProductsScreen extends StatelessWidget {
             const SizedBox(height: 2 * TSizes.defaultSpace),
             Obx(() {
               if (brandProductsController.isLoading.value) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const TBrandProductsShimmer();
               }
-              return Obx(() {
-                return Column(
-                  children: [
-                    for (var item in brandProductsController.productsToShow)
-                      Column(
-                        children: [
-                          ProductCard(product: item),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 20),
-                            child: DottedDivider(),
-                          ),
-                        ],
-                      ),
-                  ],
-                );
-              });
+              return Column(
+                children: [
+                  for (var item in brandProductsController.productsToShow)
+                    Column(
+                      children: [
+                        ProductCard(product: item),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 20),
+                          child: DottedDivider(),
+                        ),
+                      ],
+                    ),
+                ],
+              );
             }),
           ],
         ),

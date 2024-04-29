@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food/features/shop/models/product_model.dart';
 import 'package:food/features/shop/screens/store/widgets/add_to_cart_button.dart';
+import 'package:food/features/shop/screens/store/widgets/shimmer_image.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 
 class ProductCard extends StatelessWidget {
@@ -33,17 +34,14 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 150,
-            width: THelperFunctions.screenWidth() * 0.4,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                product.thumbnail,
-                fit: BoxFit.cover,
-              ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: ShimmerImage(
+              height: 150,
+              width: THelperFunctions.screenWidth() * 0.4,
+              imageUrl: product.thumbnail,
             ),
-          )
+          ),
         ],
       ),
     );

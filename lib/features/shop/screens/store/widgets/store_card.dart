@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food/features/shop/controllers/brand_controller.dart';
 import 'package:food/features/shop/models/brand_model.dart';
+import 'package:food/features/shop/screens/store/widgets/shimmer_image.dart';
 import 'package:food/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 
@@ -37,24 +38,20 @@ class StoreCard extends StatelessWidget {
                   ]),
         child: Column(
           children: [
-            SizedBox(
-              height: 175,
-              width: THelperFunctions.screenWidth() * 0.85,
-              child: ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(_borderRadius),
-                  topRight: Radius.circular(_borderRadius),
-                ),
-                child: ColorFiltered(
-                  colorFilter: store.isOpen ?? false
-                      ? const ColorFilter.mode(
-                          Colors.transparent, BlendMode.multiply)
-                      : const ColorFilter.mode(
-                          Colors.grey, BlendMode.saturation),
-                  child: Image.network(
-                    store.image == '' ? _fallbackimg : store.image,
-                    fit: BoxFit.cover,
-                  ),
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(_borderRadius),
+                topRight: Radius.circular(_borderRadius),
+              ),
+              child: ColorFiltered(
+                colorFilter: store.isOpen ?? false
+                    ? const ColorFilter.mode(
+                        Colors.transparent, BlendMode.multiply)
+                    : const ColorFilter.mode(Colors.grey, BlendMode.saturation),
+                child: ShimmerImage(
+                  height: 175,
+                  width: THelperFunctions.screenWidth() * 0.85,
+                  imageUrl: store.image == '' ? _fallbackimg : store.image,
                 ),
               ),
             ),
