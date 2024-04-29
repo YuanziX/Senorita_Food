@@ -6,11 +6,14 @@ class MySearchBar extends StatelessWidget {
   final TextEditingController searchController;
   final String searchHint;
   final Function filterFunction;
-  const MySearchBar(
-      {super.key,
-      required this.searchController,
-      required this.searchHint,
-      required this.filterFunction});
+  final bool autoFocus;
+  const MySearchBar({
+    super.key,
+    required this.searchController,
+    required this.searchHint,
+    required this.filterFunction,
+    this.autoFocus = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +30,7 @@ class MySearchBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextField(
+            autofocus: autoFocus,
             controller: searchController,
             decoration: InputDecoration(
               hintText: searchHint,

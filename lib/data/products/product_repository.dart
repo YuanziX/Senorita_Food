@@ -21,7 +21,9 @@ class ProductRepository extends GetxController {
     try {
       final snapshot = await _db
           .collection('Products')
-          .where('IsFeatured', isEqualTo: true).limit(4).get();
+          .where('IsFeatured', isEqualTo: true)
+          .limit(4)
+          .get();
       return snapshot.docs.map((e) => ProductModel.fromSnapshot(e)).toList();
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
@@ -149,8 +151,7 @@ class ProductRepository extends GetxController {
   }
 
   Future<List<ProductModel>> getProductsForBrand(
-      {required String brandId,
-      int limit = -1}) async {
+      {required String brandId, int limit = -1}) async {
     try {
       final querySnapshot = limit == -1
           ? await _db

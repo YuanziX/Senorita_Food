@@ -35,14 +35,6 @@ class TVerticalImageText extends StatelessWidget {
         padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
         child: Column(
           children: [
-            ///Circular icon
-            // TCircularImage(image: image,
-            // fit: BoxFit.fitWidth,
-            // padding: TSizes.sm*1.4,
-            // isNetworkImage: isNetworkImage,
-            // backgroundColor: backgroundColor,
-            // overlayColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark),
-
             Container(
               width: 100,
               height: 100,

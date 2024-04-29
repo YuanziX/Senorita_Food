@@ -13,7 +13,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      height: 150,
+      height: 160,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

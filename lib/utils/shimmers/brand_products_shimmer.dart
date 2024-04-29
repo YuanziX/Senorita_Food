@@ -16,7 +16,7 @@ class TBrandProductsShimmer extends StatelessWidget {
           Column(
             children: [
               TShimmerEffect(
-                height: 150,
+                height: 160,
                 width: THelperFunctions.screenWidth() * 0.85,
               ),
               const Padding(

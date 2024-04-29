@@ -15,6 +15,7 @@ import 'package:food/features/shop/screens/store/store.dart';
 import 'package:food/features/shop/screens/store/store_products.dart';
 import 'package:food/features/shop/screens/wishlist/wishlist.dart';
 import 'package:food/routes/routes.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
