@@ -18,8 +18,8 @@ class MySearchBar extends StatelessWidget {
       height: 60,
       decoration: BoxDecoration(
         color: THelperFunctions.isDarkMode(context)
-            ? TColors.accent.withOpacity(0.1)
-            : TColors.accent.withOpacity(0.4),
+            ? TColors.primary.withOpacity(0.1)
+            : TColors.primary.withOpacity(0.4),
         borderRadius: BorderRadius.circular(16),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 16),

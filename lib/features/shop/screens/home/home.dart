@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:food/common/widgets/custom_shapes/container/search_container.dart';
-//import 'package:food/common/widgets/layouts/gird_layout%20copy.dart';
 import 'package:food/common/widgets/products/prodect_cards/product_card_vertical.dart';
 import 'package:food/common/widgets/texts/section_heading.dart';
 import 'package:food/features/shop/controllers/product/product_controller.dart';
@@ -11,7 +10,6 @@ import 'package:food/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:food/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:food/utils/shimmers/vertical_product_shimmer.dart';
-//import 'package:food/venu_asked.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/widgets/layouts/gird_layout.dart';
@@ -78,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                         )),
                   ),
                   const SizedBox(height: TSizes.spaceBtwInputFields),
-                  
+
                   // Obx(() {
                   //   if (controller.isLoading.value) {
                   //     return const TVerticalProductShimmer();
@@ -91,8 +89,7 @@ class HomeScreen extends StatelessWidget {
                   // TGirdLayout2(
                   //     itemCount: controller.featuredProducts.length,
                   //     itemBuilder: (_, index) => CardDetail(product: controller.featuredProducts[index],)),
-                  
-                      
+
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const SizedBox(height: TSizes.spaceBtwItems),
