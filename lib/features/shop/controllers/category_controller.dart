@@ -49,10 +49,13 @@ class CategoryController extends GetxController {
   void getCategoryProducts(String category) async {
     // Fetch limited 4 products against each subCategory;
     final products = await _categoryrepository.getProductsByCategory(category);
-    productsToShow.assignAll(products.take(4));
+    productsToShow.assignAll(products);
+    isLoading.value = false;
   }
 
   void setCategory(CategoryModel category) {
+    isLoading.value = true;
+    productsToShow.clear();
     currentCategory = category;
     getCategoryProducts(category.name);
   }

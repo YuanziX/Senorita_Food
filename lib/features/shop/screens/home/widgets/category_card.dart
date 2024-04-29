@@ -18,7 +18,7 @@ class CategoryCard extends StatelessWidget {
           GestureDetector(
             onTap: () {
               CategoryController.instance.setCategory(categoryModel);
-              Get.to(const CategoryProductsScreen());
+              Get.to(() => const CategoryProductsScreen());
             },
             child: Container(
               width: 60,
