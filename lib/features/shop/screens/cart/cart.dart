@@ -4,7 +4,7 @@ import 'package:food/common/widgets/loaders/animation_loader.dart';
 import 'package:food/features/shop/controllers/product/cart_controller.dart';
 import 'package:food/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:food/features/shop/screens/checkout/checkout.dart';
-import 'package:food/navigation_menu.dart';
+import 'package:food/features/shop/screens/search/search_screen.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/constants/sizes.dart';
 import 'package:get/get.dart';
@@ -29,7 +29,7 @@ class CartScreen extends StatelessWidget {
             animation: TImages.cartanimation,
             showAction: true,
             actionText: 'Let\'s fill it',
-            onActionPressed: () => Get.off(() => const NavigationMenu()),
+            onActionPressed: () => Get.to(() => const SearchScreen()),
           );
 
           if (controller.cartItems.isEmpty) {

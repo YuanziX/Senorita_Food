@@ -13,6 +13,7 @@ class ModifyQuantityButton extends StatelessWidget {
     CartController cartController = CartController.instance;
     return Obx(() {
       return Container(
+        width: 110,
         decoration: BoxDecoration(
           color: TColors.primary.withOpacity(0.8),
           borderRadius: BorderRadius.circular(
@@ -20,13 +21,17 @@ class ModifyQuantityButton extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
               onTap: () => cartController.removeOneFromCart(cartItem),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                child: Text(
-                  '-',
+              child: Container(
+                color: Colors.transparent,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                  child: Text(
+                    '-',
+                  ),
                 ),
               ),
             ),
@@ -40,10 +45,13 @@ class ModifyQuantityButton extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () => cartController.addOneToCart(cartItem),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                child: Text(
-                  '+',
+              child: Container(
+                color: Colors.transparent,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                  child: Text(
+                    '+',
+                  ),
                 ),
               ),
             ),

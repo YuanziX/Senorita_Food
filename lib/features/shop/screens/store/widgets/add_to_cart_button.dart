@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class AddToCartButton extends StatelessWidget {
   final ProductModel product;
-  const AddToCartButton({super.key, required this.product});
+  const AddToCartButton({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,9 @@ class AddToCartButton extends StatelessWidget {
         child: cartController.getProductQuantityInCart(product.id) == 0
             ? GestureDetector(
                 onTap: () => cartController.addOneProductToCart(product),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: TColors.primary.withOpacity(0.8),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                child: Material(
+                  borderRadius: BorderRadius.circular(10),
+                  color: TColors.primary.withOpacity(0.8),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 8, horizontal: 34),
                     child: Text(
@@ -41,11 +39,14 @@ class AddToCartButton extends StatelessWidget {
                     GestureDetector(
                       onTap: () =>
                           cartController.removeOneProductFromCart(product),
-                      child: const Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                        child: Text(
-                          '-',
+                      child: Container(
+                        color: Colors.transparent,
+                        child: const Padding(
+                          padding:
+                              EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                          child: Text(
+                            '-',
+                          ),
                         ),
                       ),
                     ),
@@ -59,11 +60,14 @@ class AddToCartButton extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () => cartController.addOneProductToCart(product),
-                      child: const Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                        child: Text(
-                          '+',
+                      child: Container(
+                        color: Colors.transparent,
+                        child: const Padding(
+                          padding:
+                              EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                          child: Text(
+                            '+',
+                          ),
                         ),
                       ),
                     ),
