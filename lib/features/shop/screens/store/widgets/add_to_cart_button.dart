@@ -6,7 +6,14 @@ import 'package:get/get.dart';
 
 class AddToCartButton extends StatelessWidget {
   final ProductModel product;
-  const AddToCartButton({Key? key, required this.product}) : super(key: key);
+  final Color? color;
+  final BorderRadius? borderRadius;
+  const AddToCartButton({
+    super.key,
+    required this.product,
+    this.color,
+    this.borderRadius,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +24,8 @@ class AddToCartButton extends StatelessWidget {
             ? GestureDetector(
                 onTap: () => cartController.addOneProductToCart(product),
                 child: Material(
-                  borderRadius: BorderRadius.circular(10),
-                  color: TColors.primary.withOpacity(0.8),
+                  borderRadius: borderRadius ?? BorderRadius.circular(10),
+                  color: color ?? TColors.primary.withOpacity(0.8),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 8, horizontal: 34),
                     child: Text(
@@ -30,8 +37,8 @@ class AddToCartButton extends StatelessWidget {
             : Container(
                 width: 98,
                 decoration: BoxDecoration(
-                  color: TColors.primary.withOpacity(0.8),
-                  borderRadius: BorderRadius.circular(10),
+                  color: color ?? TColors.primary.withOpacity(0.8),
+                  borderRadius: borderRadius ?? BorderRadius.circular(10),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

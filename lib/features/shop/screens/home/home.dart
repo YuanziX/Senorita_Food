@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:food/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:food/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:food/features/shop/screens/home/widgets/popular_products.dart';
 import 'package:food/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:food/features/shop/screens/home/widgets/search_container.dart';
 import 'package:food/features/shop/screens/home/widgets/title_divider.dart';
@@ -66,9 +67,7 @@ class HomeScreen extends StatelessWidget {
                     title: 'Popular Products',
                   ),
                   SizedBox(height: TSizes.spaceBtwItems),
-
-                  //Products
-                  // TPopularProducts(),
+                  PopularProducts(),
                 ],
               ),
             ),

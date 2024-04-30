@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 class ProductRepository extends GetxController {
   static ProductRepository get instance => Get.find();
   final _allProductsEndPoint = '$dbLink/products';
+  final _popularProductsEndPoint = '$dbLink/products/popuplarproduct';
 
   // FireStore instance for database interaction
   final _db = FirebaseFirestore.instance;
@@ -19,6 +20,21 @@ class ProductRepository extends GetxController {
     try {
       Dio dio = Dio();
       final response = await dio.get(_allProductsEndPoint);
+      final List<ProductModel> products = [];
+      for (var product in response.data['data']) {
+        products.add(ProductModel.fromJson(product));
+      }
+      return products;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
+  // Get all products
+  Future<List<ProductModel>> getPopularProducts() async {
+    try {
+      Dio dio = Dio();
+      final response = await dio.get(_popularProductsEndPoint);
       final List<ProductModel> products = [];
       for (var product in response.data['data']) {
         products.add(ProductModel.fromJson(product));
