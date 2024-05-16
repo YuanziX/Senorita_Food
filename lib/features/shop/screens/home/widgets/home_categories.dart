@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:food/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:food/features/shop/controllers/category_controller.dart';
-import 'package:food/features/shop/screens/sub_category/sub_categories.dart';
+import 'package:food/features/shop/screens/home/widgets/category_card.dart';
 import 'package:food/utils/shimmers/category_shimmer.dart';
 import 'package:get/get.dart';
 
 class THomeCategories extends StatelessWidget {
-  const THomeCategories({
-    super.key,
-  });
+  const THomeCategories({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,27 +14,32 @@ class THomeCategories extends StatelessWidget {
     return Obx(() {
       if (categoryController.isLoading.value) return const TCategoryShimmer();
 
-      if (categoryController.featuredCategories.isEmpty) {
+      if (categoryController.allCategories.isEmpty) {
         return Center(
-            child: Text('No Data Found',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .apply(color: Colors.white)));
-      } else {}
+          child: Text(
+            'No Data Found',
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .apply(color: Colors.white),
+          ),
+        );
+      }
+
       return SizedBox(
-        height: 130,
-        child: ListView.builder(
+        height: categoryController.allCategories.length > 6 ? 200 : 85,
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: categoryController.allCategories.length > 6 ? 2 : 1,
+            childAspectRatio: 1,
+          ),
           shrinkWrap: true,
-          itemCount: categoryController.featuredCategories.length,
           scrollDirection: Axis.horizontal,
+          itemCount: categoryController.allCategories.length,
           itemBuilder: (_, index) {
-            final category = categoryController.featuredCategories[index];
-            return TVerticalImageText(
-                image: category.image,
-                title: category.name,
-                onTap: () =>
-                    Get.to(() => SubCategoriesScreen(category: category)));
+            return CategoryCard(
+              categoryModel: categoryController.allCategories[index],
+            );
           },
         ),
       );

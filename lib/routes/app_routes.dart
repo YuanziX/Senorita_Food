@@ -12,14 +12,18 @@ import 'package:food/features/shop/screens/home/home.dart';
 import 'package:food/features/shop/screens/orders/order.dart';
 import 'package:food/features/shop/screens/product_reviews/product_review.dart';
 import 'package:food/features/shop/screens/store/store.dart';
+import 'package:food/features/shop/screens/store/store_products.dart';
 import 'package:food/features/shop/screens/wishlist/wishlist.dart';
 import 'package:food/routes/routes.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
   static final pages = [
     GetPage(name: TRoutes.home, page: () => const HomeScreen()),
     GetPage(name: TRoutes.store, page: () => const StoreScreen()),
+    GetPage(
+        name: TRoutes.storeProducts, page: () => const StoreProductsScreen()),
     GetPage(name: TRoutes.favourites, page: () => const FavouriteScreen()),
     GetPage(name: TRoutes.settings, page: () => const SettingScreen()),
     GetPage(

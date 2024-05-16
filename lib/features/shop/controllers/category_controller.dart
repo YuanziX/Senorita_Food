@@ -1,5 +1,4 @@
 import 'package:food/common/widgets/loaders/loaders.dart';
-import 'package:food/data/products/product_repository.dart';
 import 'package:food/data/repositories/categories/category_repo.dart';
 import 'package:food/features/shop/models/category_model.dart';
 import 'package:food/features/shop/models/product_model.dart';
@@ -10,8 +9,10 @@ class CategoryController extends GetxController {
 
   final isLoading = false.obs;
   final _categoryrepository = Get.put(CategoryRepository());
+  late CategoryModel currentCategory;
   RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
   RxList<CategoryModel> featuredCategories = <CategoryModel>[].obs;
+  RxList<ProductModel> productsToShow = <ProductModel>[].obs;
 
   @override
   void onInit() {
@@ -34,7 +35,6 @@ class CategoryController extends GetxController {
       //Filter featured categories
       featuredCategories.assignAll(allCategories
           .where((category) => category.isFeatured && category.parentId.isEmpty)
-          .take(8)
           .toList());
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
@@ -44,24 +44,18 @@ class CategoryController extends GetxController {
     }
   }
 
-  // Load selected Category data
-  Future<List<CategoryModel>> getSubCategories(String categoryId) async {
-    try {
-      final subCategories =
-          await _categoryrepository.getSubCategories(categoryId);
-      return subCategories;
-    } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-      return [];
-    }
+  // Get Category or sub Category Products
+  void getCategoryProducts(String category) async {
+    // Fetch limited 4 products against each subCategory;
+    final products = await _categoryrepository.getProductsByCategory(category);
+    productsToShow.assignAll(products);
+    isLoading.value = false;
   }
 
-  // Get Category or sub Category Products
-  Future<List<ProductModel>> getCategoryProducts(
-      {required String categoryId, int limit = 4}) async {
-    // Fetch limited 4 products against each subCategory;
-    final products = await ProductRepository.instance
-        .getProductsForCategory(categoryId: categoryId, limit: limit);
-    return products;
+  void setCategory(CategoryModel category) {
+    isLoading.value = true;
+    productsToShow.clear();
+    currentCategory = category;
+    getCategoryProducts(category.name);
   }
 }

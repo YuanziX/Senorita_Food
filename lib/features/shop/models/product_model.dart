@@ -67,13 +67,28 @@ class ProductModel {
     };
   }
 
+  factory ProductModel.fromJson(Map<String, dynamic> data) {
+    return ProductModel(
+      id: data['id'].toString(),
+      stock: data['stock'],
+      price: data['price'].toDouble(),
+      title: data['name'],
+      thumbnail: data['imgurl'],
+      salePrice: data['saleprice'].toDouble(),
+      isFeatured: data['isfeatured'],
+      categoryId: data['category'],
+      productType: data['productype'],
+      description: data['description'],
+    );
+  }
+
   // Map Json oriented document snapshot from Firebase to Model
 
   factory ProductModel.fromSnapshot(
       DocumentSnapshot<Map<String, dynamic>> document) {
     if (document.data() == null) return ProductModel.empty();
     final data = document.data()!;
-    
+
     return ProductModel(
       id: document.id,
       sku: data['SKU'],
@@ -95,12 +110,10 @@ class ProductModel {
           .map((e) => ProductVariationModel.fromJson(e))
           .toList(),
     );
-    
   }
   // Map Json oriented document snapshot from Firebase to Model
   factory ProductModel.fromQuerySnapshot(
       QueryDocumentSnapshot<Object?> document) {
-        
     final data = document.data() as Map<String, dynamic>;
     return ProductModel(
       id: document.id,

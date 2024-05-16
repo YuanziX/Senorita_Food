@@ -62,8 +62,9 @@ class ChangeName extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () => controller.updateUserName(),
-                  child: const Text('Save')),
+                onPressed: () => controller.updateUserName(),
+                child: const Text('Save'),
+              ),
             ),
           ],
         ),

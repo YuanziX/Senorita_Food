@@ -3,7 +3,6 @@ import 'package:food/common/widgets/loaders/loaders.dart';
 import 'package:food/data/repositories/user/user_repo.dart';
 import 'package:food/features/authentication/controllers/signup/network_manager.dart';
 import 'package:food/features/personalisation/controllers/user_controller.dart';
-import 'package:food/features/personalisation/screens/profile/widgets/profile.dart';
 import 'package:food/utils/constants/image_strings.dart';
 import 'package:food/utils/popups/full_screen_loader.dart';
 import 'package:get/get.dart';
@@ -67,7 +66,7 @@ class UpdateNameController extends GetxController {
           title: 'Congratulations', message: 'Your Name has been updated');
 
       //Move to previous screen
-      Get.off(() => const ProfileScreen());
+      Get.back(closeOverlays: true);
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());

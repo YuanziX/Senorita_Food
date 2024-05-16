@@ -2,6 +2,7 @@ class TRoutes {
   static const home = '/';
 
   static const store = '/store';
+  static const storeProducts = '/store/products';
 
   static const favourites = '/favourites';
 

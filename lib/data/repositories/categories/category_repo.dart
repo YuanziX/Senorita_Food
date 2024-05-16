@@ -1,80 +1,41 @@
-import 'package:flutter/services.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:food/features/shop/models/category_model.dart';
-import 'package:food/firebase_storage_service.dart';
-import 'package:food/utils/exceptions/firebase_exception.dart';
-import 'package:food/utils/exceptions/paltform_exception.dart';
+import 'package:food/features/shop/models/product_model.dart';
+import 'package:food/utils/constants/api_constants.dart';
 import 'package:get/get.dart';
+import 'package:dio/dio.dart';
 
 class CategoryRepository extends GetxController {
   static CategoryRepository get instance => Get.find();
-
-  // Variables
-  final _db = FirebaseFirestore.instance;
+  final _allCategoriesEndPoint = '$dbLink/categories';
+  final _productsByCategoryEndPoint = '$dbLink/products/bycategory';
 
   // Get all categories
   Future<List<CategoryModel>> getAllCategories() async {
     try {
-      final snapShot = await _db.collection('Categories').get();
-      final list = snapShot.docs
-          .map((document) => CategoryModel.fromSnapshot(document))
-          .toList();
-      return list;
-    } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code).message;
-    } on PlatformException catch (e) {
-      throw TPlatformException(e.code).message;
-    } catch (e) {
-      throw 'Something went wrong. Please try again';
-    }
-  }
-
-  // Get sub categories
-  Future<List<CategoryModel>> getSubCategories(String categoryId) async {
-    try {
-      final snapshot = await _db
-          .collection("Categories")
-          .where('ParentId', isEqualTo: categoryId)
-          .get();
-      final result =
-          snapshot.docs.map((e) => CategoryModel.fromSnapshot(e)).toList();
-      return result;
-    } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code).message;
-    } on PlatformException catch (e) {
-      throw TPlatformException(e.code).message;
-    } catch (e) {
-      throw 'Something went wrong. Please try again';
-    }
-  }
-
-  // Upload Categories to the Cloud Firestore
-  Future<void> uploadDummyData(List<CategoryModel> categories) async {
-    try {
-      final storage = Get.put(TFirebaseStorageService());
-
-      //Loop through each category
-      for (var category in categories) {
-        //Get ImageData link from the local assets
-        final file = await storage.getImageDataFromAssets(category.image);
-
-        //Upload image and get its url
-        final url =
-            await storage.uploadImageData('Categories', file, category.name);
-
-        //Assign URL to Category.image attribute
-        category.image = url;
-
-        //Storage Category in Firestore
-        await _db
-            .collection("Categories")
-            .doc(category.id)
-            .set(category.toJson());
+      Dio dio = Dio();
+      final response = await dio.post(_allCategoriesEndPoint);
+      final List<CategoryModel> categories = [];
+      for (var category in response.data['data']) {
+        categories.add(CategoryModel.fromMap(category));
       }
-    } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code).message;
-    } on PlatformException catch (e) {
-      throw TPlatformException(e.code).message;
+      return categories;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
+  // Get products by category
+  Future<List<ProductModel>> getProductsByCategory(String category) async {
+    try {
+      Dio dio = Dio();
+      final response = await dio.post(_productsByCategoryEndPoint, data: {
+        'category': category.toLowerCase(),
+      });
+      final List<ProductModel> categories = [];
+      for (var category in response.data['data']) {
+        categories.add(ProductModel.fromJson(category));
+      }
+      return categories;
     } catch (e) {
       throw 'Something went wrong. Please try again';
     }

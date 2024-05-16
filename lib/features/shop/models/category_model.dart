@@ -11,13 +11,21 @@ class CategoryModel {
     required this.id,
     required this.name,
     required this.image,
-    required this.isFeatured,
+    this.isFeatured = false,
     this.parentId = '',
   });
 
   // Empty helper Function
   static CategoryModel empty() =>
       CategoryModel(id: '', name: '', image: '', isFeatured: false);
+
+  factory CategoryModel.fromMap(Map<String, dynamic> map) {
+    return CategoryModel(
+      id: map['id'].toString(),
+      name: map['category'] ?? '',
+      image: map['imgurl'] ?? '',
+    );
+  }
 
   // Convert model to Json structure so that you can store data in firebase
   Map<String, dynamic> toJson() {

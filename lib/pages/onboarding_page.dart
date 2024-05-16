@@ -46,9 +46,7 @@ class OnboardingPage extends StatelessWidget {
       body: ConcentricPageView(
         colors: data.map((e) => e.backgroundColor).toList(),
         itemCount: data.length,
-        itemBuilder: (int index, double value) {
-          return CardPlanet(data: data[index]);
-        },
+        itemBuilder: (int index) => CardPlanet(data: data[index]),
         onFinish: () {
           controller.skipPage();
           // Navigator.pushReplacement(
