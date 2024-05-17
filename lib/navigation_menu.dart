@@ -15,29 +15,35 @@ class NavigationMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
     final darkMode = THelperFunctions.isDarkMode(context);
-    return Scaffold(
-      bottomNavigationBar: Obx(
-        () => NavigationBar(
-          height: 80,
-          elevation: 0,
-          selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) =>
-              controller.selectedIndex.value = index,
-          backgroundColor:
-              darkMode ? TColors.black : TColors.white.withOpacity(0.1),
-          indicatorColor: TColors.primary.withOpacity(0.2),
-          destinations: const [
-            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            //NavigationDestination(icon: Icon(Iconsax.emoji_happy), label: 'Explore'),
-            NavigationDestination(icon: Icon(Iconsax.shop_add), label: 'Store'),
-            NavigationDestination(
-                icon: Icon(Iconsax.shopping_cart), label: 'Cart'),
-            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
-          ],
+    return Obx(() {
+      return PopScope(
+        canPop: controller.selectedIndex.value == 0,
+        onPopInvoked: (didPop) {
+          controller.selectedIndex.value = 0;
+        },
+        child: Scaffold(
+          bottomNavigationBar: NavigationBar(
+            height: 80,
+            elevation: 0,
+            selectedIndex: controller.selectedIndex.value,
+            onDestinationSelected: (index) =>
+                controller.selectedIndex.value = index,
+            backgroundColor:
+                darkMode ? TColors.black : TColors.white.withOpacity(0.1),
+            indicatorColor: TColors.primary.withOpacity(0.2),
+            destinations: const [
+              NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+              NavigationDestination(
+                  icon: Icon(Iconsax.shop_add), label: 'Store'),
+              NavigationDestination(
+                  icon: Icon(Iconsax.shopping_cart), label: 'Cart'),
+              NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+            ],
+          ),
+          body: Obx(() => controller.screens[controller.selectedIndex.value]),
         ),
-      ),
-      body: Obx(() => controller.screens[controller.selectedIndex.value]),
-    );
+      );
+    });
   }
 }
 
@@ -46,7 +52,6 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    //const ExploreScreen(),
     const StoreScreen(),
     const CartScreen(),
     const SettingScreen(),
