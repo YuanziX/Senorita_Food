@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food/features/shop/controllers/product/cart_controller.dart';
 import 'package:food/features/shop/models/product_model.dart';
+import 'package:food/features/shop/screens/store/widgets/splash_effect.dart';
 import 'package:food/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +24,8 @@ class AddToCartButton extends StatelessWidget {
     return Obx(() {
       return Container(
         child: cartController.getProductQuantityInCart(product.id) == 0
-            ? GestureDetector(
+            ? SplashEffect(
+                borderRadius: borderRadius ?? BorderRadius.circular(10),
                 onTap: () => cartController.addOneProductToCart(product),
                 child: Material(
                   borderRadius: borderRadius ?? BorderRadius.circular(10),
@@ -49,16 +51,19 @@ class AddToCartButton extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    GestureDetector(
+                    SplashEffect(
                       onTap: () =>
                           cartController.removeOneProductFromCart(product),
                       child: Container(
                         color: Colors.transparent,
-                        child: const Padding(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 12),
                           child: Text(
                             '-',
+                            style: TextStyle(
+                              color: fontColor ?? Colors.black,
+                            ),
                           ),
                         ),
                       ),
@@ -74,7 +79,7 @@ class AddToCartButton extends StatelessWidget {
                         ),
                       ),
                     ),
-                    GestureDetector(
+                    SplashEffect(
                       onTap: () => cartController.addOneProductToCart(product),
                       child: Container(
                         color: Colors.transparent,
