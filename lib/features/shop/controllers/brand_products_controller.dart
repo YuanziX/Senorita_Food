@@ -37,11 +37,11 @@ class BrandProductsController extends GetxController {
   void filterFood(String query) {
     if (query.isNotEmpty) {
       final List<ProductModel> searchList = [];
-      allProducts.forEach((product) {
+      for (var product in allProducts) {
         if (product.title.toLowerCase().contains(query.toLowerCase())) {
           searchList.add(product);
         }
-      });
+      }
       productsToShow.assignAll(searchList);
       return;
     }

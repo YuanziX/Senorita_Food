@@ -22,10 +22,13 @@ class StoreProductsScreen extends StatelessWidget {
         child: ListView(
           children: [
             Center(
-              child: Text(
-                brandProductsController.brand.name,
-                style:
-                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              child: AppBar(
+                title: Text(
+                  brandProductsController.brand.name,
+                  style: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                centerTitle: true,
               ),
             ),
             const SizedBox(height: 2 * TSizes.spaceBtwItems),

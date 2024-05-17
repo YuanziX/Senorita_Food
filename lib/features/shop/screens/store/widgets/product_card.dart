@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:food/features/shop/models/product_model.dart';
 import 'package:food/features/shop/screens/store/widgets/add_to_cart_button.dart';
 import 'package:food/features/shop/screens/store/widgets/shimmer_image.dart';

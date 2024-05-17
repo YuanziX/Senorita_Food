@@ -7,11 +7,13 @@ import 'package:get/get.dart';
 class AddToCartButton extends StatelessWidget {
   final ProductModel product;
   final Color? color;
+  final Color? fontColor;
   final BorderRadius? borderRadius;
   const AddToCartButton({
     super.key,
     required this.product,
     this.color,
+    this.fontColor,
     this.borderRadius,
   });
 
@@ -26,10 +28,14 @@ class AddToCartButton extends StatelessWidget {
                 child: Material(
                   borderRadius: borderRadius ?? BorderRadius.circular(10),
                   color: color ?? TColors.primary.withOpacity(0.8),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 34),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 34),
                     child: Text(
                       'ADD',
+                      style: TextStyle(
+                        color: fontColor ?? Colors.black,
+                      ),
                     ),
                   ),
                 ),
@@ -63,17 +69,21 @@ class AddToCartButton extends StatelessWidget {
                         cartController
                             .getProductQuantityInCart(product.id)
                             .toString(),
+                        style: TextStyle(
+                          color: fontColor ?? Colors.black,
+                        ),
                       ),
                     ),
                     GestureDetector(
                       onTap: () => cartController.addOneProductToCart(product),
                       child: Container(
                         color: Colors.transparent,
-                        child: const Padding(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 12),
                           child: Text(
                             '+',
+                            style: TextStyle(color: fontColor ?? Colors.black),
                           ),
                         ),
                       ),

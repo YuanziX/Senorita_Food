@@ -40,19 +40,19 @@ class PopularProductBigCard extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                color: Color.fromARGB(212, 255, 255, 255),
+                color: Colors.black.withOpacity(0.8),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   productModel.title,
                   style: Theme.of(context).textTheme.bodyLarge!.apply(
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                 ),
               ),
@@ -62,19 +62,19 @@ class PopularProductBigCard extends StatelessWidget {
             top: 0,
             left: 0,
             child: Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
                   bottomRight: Radius.circular(10),
                   topLeft: Radius.circular(10),
                 ),
-                color: Color.fromARGB(212, 255, 255, 255),
+                color: Colors.black.withOpacity(0.8),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   '₹${productModel.price}',
                   style: Theme.of(context).textTheme.bodyLarge!.apply(
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                 ),
               ),
@@ -85,7 +85,8 @@ class PopularProductBigCard extends StatelessWidget {
             right: 0,
             child: AddToCartButton(
               product: productModel,
-              color: const Color.fromARGB(212, 255, 255, 255),
+              color: Colors.black.withOpacity(0.8),
+              fontColor: Colors.white,
               borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(10),
                 topLeft: Radius.circular(10),
