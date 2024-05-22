@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/features/personalisation/screens/settings/settings.dart';
+import 'package:food/features/shop/controllers/brand_controller.dart';
 import 'package:food/features/shop/screens/cart/cart.dart';
 import 'package:food/features/shop/screens/home/home.dart';
 import 'package:food/features/shop/screens/store/store.dart';
@@ -19,6 +20,7 @@ class NavigationMenu extends StatelessWidget {
       return PopScope(
         canPop: controller.selectedIndex.value == 0,
         onPopInvoked: (didPop) {
+          _resetStores();
           controller.selectedIndex.value = 0;
         },
         child: Scaffold(
@@ -26,8 +28,10 @@ class NavigationMenu extends StatelessWidget {
             height: 80,
             elevation: 0,
             selectedIndex: controller.selectedIndex.value,
-            onDestinationSelected: (index) =>
-                controller.selectedIndex.value = index,
+            onDestinationSelected: (index) {
+              _resetStores();
+              controller.selectedIndex.value = index;
+            },
             backgroundColor:
                 darkMode ? TColors.black : TColors.white.withOpacity(0.1),
             indicatorColor: TColors.primary.withOpacity(0.2),
@@ -45,9 +49,16 @@ class NavigationMenu extends StatelessWidget {
       );
     });
   }
+
+  void _resetStores() {
+    if (NavigationController.instance.selectedIndex.value == 1) {
+      BrandController.instance.resetBrands();
+    }
+  }
 }
 
 class NavigationController extends GetxController {
+  static NavigationController get instance => Get.find();
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [

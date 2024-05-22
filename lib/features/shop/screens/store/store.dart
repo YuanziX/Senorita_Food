@@ -20,9 +20,10 @@ class StoreScreen extends StatelessWidget {
         child: ListView(
           children: [
             MySearchBar(
-                searchController: searchController,
-                searchHint: 'Search for your favourite store',
-                filterFunction: brandController.filterBrands),
+              searchController: searchController,
+              searchHint: 'Search for your favourite store',
+              filterFunction: brandController.filterBrands,
+            ),
             const SizedBox(height: 2 * TSizes.spaceBtwItems),
             Obx(() {
               if (brandController.isLoading.value) {

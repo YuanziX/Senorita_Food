@@ -48,6 +48,12 @@ class BrandController extends GetxController {
     }
   }
 
+  Future<void> resetBrands() async {
+    isLoading.value = true;
+    brandsToShow.assignAll(allBrands);
+    isLoading.value = false;
+  }
+
   void setCurrentBrand(BrandModel brand) {
     currentBrand = brand;
   }
