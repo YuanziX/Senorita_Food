@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 class CategoryRepository extends GetxController {
   static CategoryRepository get instance => Get.find();
   final _allCategoriesEndPoint = '$dbLink/categories';
-  final _productsByCategoryEndPoint = '$dbLink/products/bycategory';
+  final _productsByCategoryEndPoint = '$dbLink/products?category=';
 
   // Get all categories
   Future<List<CategoryModel>> getAllCategories() async {
@@ -28,9 +28,8 @@ class CategoryRepository extends GetxController {
   Future<List<ProductModel>> getProductsByCategory(String category) async {
     try {
       Dio dio = Dio();
-      final response = await dio.post(_productsByCategoryEndPoint, data: {
-        'category': category.toLowerCase(),
-      });
+      final response = await dio
+          .get('$_productsByCategoryEndPoint${category.toLowerCase()}');
       final List<ProductModel> categories = [];
       for (var category in response.data['data']) {
         categories.add(ProductModel.fromJson(category));

@@ -11,8 +11,8 @@ class BrandRepository extends GetxController {
   static BrandRepository get instance => Get.find();
 
   // Variables
-  final _brandEndpoint = '$dbLink/brand';
-  final _productEndpoint = '$dbLink/products';
+  final _brandEndpoint = '$dbLink/restaurant';
+  final _productByBrandEndpoint = '$dbLink/products?brandid=';
   final dio = Dio();
 
   Future<List<BrandModel>> getAllBrands() async {
@@ -33,11 +33,8 @@ class BrandRepository extends GetxController {
   // Get products for Brand
   Future<List<ProductModel>> getBrandProducts(String brandId) async {
     try {
-      final request = await dio.post(
-        '$_productEndpoint/bybrand',
-        data: {
-          'brandid': brandId,
-        },
+      final request = await dio.get(
+        '$_productByBrandEndpoint$brandId',
       );
       List<ProductModel> products = [];
       for (var item in request.data['data']) {
